@@ -1,5 +1,13 @@
+// import components
+import { Navbar } from "./Components/Navbar";
+import { HomePage } from "./Components/HomePage";
+
+// Main app
 export default function App() {
   return (
-    <h1 className="text-7xl">Hiii</h1>
+    <div className="h-full">
+      <Navbar />
+      <HomePage />
+    </div>
   )
-} 
+}
