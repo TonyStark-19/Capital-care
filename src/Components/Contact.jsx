@@ -36,7 +36,7 @@ export function Contact() {
                     </form>
                 </div>
 
-                <div className="p-8 min-w-[45%] shadow-xl rounded-r-lg text-white bg-blue-600">
+                <div className="p-8 min-w-[45%] shadow-xl rounded-r-lg text-white bg-blue-700">
                     <h2 className="text-[32px] mb-6 font-bold">Contact Information</h2>
 
                     <div className="mb-4 flex flex-row gap-2.5 items-center text-[16px]">
@@ -53,6 +53,18 @@ export function Contact() {
                         <SlLocationPin className="text-[22px]" />
                         207 2nd Floor, Durga Chamber RDC, Raj Nagar, Ghaziabad (U.P) - 201002
                     </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3327.3587877125105!2d77.43742507529063!3d28
+                        .672777775642697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQwJzIyLjAiTiA3N8KwMjYnMjQuMCJF!
+                        5e1!3m2!1sen!2sin!4v1752819216108!5m2!1sen!2sin"
+                        width="600"
+                        height="300"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
                 </div>
             </div>
         </div>

@@ -9,10 +9,10 @@ export function Navbar() {
             </div>
 
             <ul className="flex flex-row items-center gap-8 text-[17px]">
-                <li className="cursor-pointer text-gray-700 hover:text-blue-600">Home</li>
-                <li className="cursor-pointer text-gray-700 hover:text-blue-600">About</li>
-                <li className="cursor-pointer text-gray-700 hover:text-blue-600">Services</li>
-                <li className="cursor-pointer text-gray-700 hover:text-blue-600">Contact</li>
+                <li className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700">Home</li>
+                <li className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700">About</li>
+                <li className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700">Services</li>
+                <li className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700">Contact</li>
             </ul>
         </div>
     )

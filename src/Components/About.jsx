@@ -10,7 +10,7 @@ export function About() {
             <h1 className="text-black text-4xl font-bold text-center mb-12">About Us</h1>
 
             <div className="flex flex-row items-center justify-center gap-8 flex-wrap">
-                <div className="p-8 w-[600px] h-[300px] bg-gray-50 rounded-lg hover:shadow-lg transition">
+                <div className="p-8 w-[600px] h-[300px] bg-gray-50 rounded-lg hover:shadow-xl transition">
                     <h2 className="text-2xl text-blue-700 font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full">Who We Are?</h2>
                     <p className="text-[16px] tracking-wider text-gray-700">At Capital Care Finance Company, we simplify
@@ -20,16 +20,16 @@ export function About() {
                         processing, minimal paperwork, and quick approvals.</p>
                 </div>
 
-                <div className="p-8 w-[600px] h-[300px] bg-gray-50 rounded-lg hover:shadow-lg transition">
-                    <h2 className="text-2xl text-blue-700 font-bold relative after:content-[''] after:block after:w-16
-                    after:h-1 after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full">What We Offer</h2>
-                    <p className="text-[16px] tracking-wider text-gray-700">At Capital Care Finance Company , we provide a
+                <div className="p-8 w-[600px] h-[300px] bg-blue-700 rounded-lg hover:shadow-xl transition">
+                    <h2 className="text-2xl text-white font-bold relative after:content-[''] after:block after:w-16
+                    after:h-1 after:bg-white after:mt-2 after:mb-3 after:rounded-full">What We Offer</h2>
+                    <p className="text-[16px] tracking-wider text-gray-100">At Capital Care Finance Company , we provide a
                         wide range of loan solutions designed to meet your financial needs with ease and efficiency. Whether
                         you need funds for personal use, homeownership, business expansion, or leveraging your property's
                         value, we've got you covered.</p>
                 </div>
 
-                <div className="p-8 w-[600px] h-[250px] bg-blue-700 rounded-lg hover:shadow-lg transition">
+                <div className="p-8 w-[600px] h-[250px] bg-blue-700 rounded-lg hover:shadow-xl transition">
                     <h2 className="text-2xl text-white font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-white after:mt-2 after:mb-3 after:rounded-full">Our Mission</h2>
                     <p className="text-[16px] tracking-wider text-gray-100">At Capital Care Finance Company , we are committed
@@ -38,7 +38,7 @@ export function About() {
                         paperwork.</p>
                 </div>
 
-                <div className="p-8 w-[600px] h-[250px] bg-gray-50 rounded-lg hover:shadow-lg transition">
+                <div className="p-8 w-[600px] h-[250px] bg-gray-50 rounded-lg hover:shadow-xl transition">
                     <h2 className="text-2xl text-blue-700 font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full">Core Values</h2>
 

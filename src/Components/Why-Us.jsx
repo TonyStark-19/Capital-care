@@ -12,19 +12,25 @@ export function WhyUS() {
 
                 <div className="flex flex-row justify-center gap-5">
                     <div className="w-[30%] flex flex-col justify-center items-center p-8">
-                        <GrUserExpert className="text-blue-700 text-3xl mb-6" />
+                        <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">
+                            <GrUserExpert className="text-blue-800 text-3xl" />
+                        </div>
                         <h3 className="text-[20px] font-bold mb-2.5">Expert Guidance</h3>
                         <p className="text-[16px] text-gray-700">Professional team with years of experience</p>
                     </div>
 
                     <div className="w-[30%] flex flex-col justify-center items-center p-8">
-                        <AiOutlineStock className="text-blue-700 text-3xl mb-6" />
+                        <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">
+                            <AiOutlineStock className="text-blue-800 text-3xl" />
+                        </div>
                         <h3 className="text-[20px] font-bold mb-2.5">Fast Processing</h3>
                         <p className="text-[16px] text-gray-700">Quick approvals with minimal documentation</p>
                     </div>
 
                     <div className="w-[30%] flex flex-col justify-center items-center p-8">
-                        <SlCreditCard className="text-blue-700 text-3xl mb-6" />
+                        <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">
+                            <SlCreditCard className="text-blue-800 text-3xl" />
+                        </div>
                         <h3 className="text-[20px] font-bold mb-2.5">Competitive Rates</h3>
                         <p className="text-[16px] text-gray-700">Best-in-market rates for all services</p>
                     </div>
@@ -32,7 +38,7 @@ export function WhyUS() {
             </div>
 
             <div className="flex flex-row justify-center gap-5 py-5 px-10">
-                <div className="p-8 w-[44%] rounded-lg shadow-lg hover:shadow-2xl transition">
+                <div className="p-8 w-[44%] rounded-lg shadow-lg hover:shadow-2xl duration-300">
                     <h2 className="text-2xl font-bold pb-2.5 border-b-2 border-gray-300 mb-5
                     text-blue-900">Capital Care Finance Company Referral Program</h2>
                     <p className="text-[16px] text-gray-700">Refer your friends, family, or peers to Capital Care Finance
@@ -45,7 +51,7 @@ export function WhyUS() {
                     cursor-pointer">Know More</button>
                 </div>
 
-                <div className="p-8 w-[44%] rounded-lg shadow-lg hover:shadow-2xl transition">
+                <div className="p-8 w-[44%] rounded-lg shadow-lg hover:shadow-2xl duration-300">
                     <h2 className="text-2xl font-bold pb-2.5 border-b-2 border-gray-300 mb-5 text-blue-900">
                         Become A Partner</h2>
                     <p className="text-[16px] text-gray-700">Earning Opportunity for all existing agents with Capital Care
