@@ -47,8 +47,8 @@ export function WhyUS() {
                     <p className="text-[16px] text-gray-700 mt-4">The more you refer, the more you earn!</p>
                     <p className="text-[16px] text-gray-700 mt-4 mb-6">It's simple — help others get the financial support
                         they need, and enjoy rewards in return.</p>
-                    <button className="py-2.5 px-6 text-[16px] font-bold text-white bg-blue-900 rounded-4xl
-                    cursor-pointer">Know More</button>
+                    <button className="py-2.5 px-6 text-[16px] font-bold text-white bg-blue-900 hover:bg-blue-950 rounded-4xl
+                    transition cursor-pointer">Know More</button>
                 </div>
 
                 <div className="p-8 w-[44%] rounded-lg shadow-lg hover:shadow-2xl duration-300">
@@ -81,8 +81,8 @@ export function WhyUS() {
                         </div>
                     </div>
 
-                    <button className="py-2.5 px-6 text-[16px] font-bold text-white bg-blue-900 rounded-4xl
-                    cursor-pointer">Apply</button>
+                    <button className="py-2.5 px-6 text-[16px] font-bold text-white bg-blue-900 hover:bg-blue-950 transition
+                     rounded-4xl cursor-pointer">Apply</button>
                 </div>
             </div>
         </>

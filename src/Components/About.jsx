@@ -6,7 +6,7 @@ import { MdErrorOutline } from "react-icons/md";
 // About section
 export function About() {
     return (
-        <div className="p-12">
+        <div className="p-12" id="about">
             <h1 className="text-black text-4xl font-bold text-center mb-12">About Us</h1>
 
             <div className="flex flex-row items-center justify-center gap-8 flex-wrap">

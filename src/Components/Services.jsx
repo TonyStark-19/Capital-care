@@ -10,7 +10,7 @@ import { SlCreditCard } from "react-icons/sl";
 // Services section
 export function Services() {
     return (
-        <div className="py-12 px-4 bg-gray-50">
+        <div className="py-12 px-4 bg-gray-50" id="services">
             <h1 className="text-black text-4xl font-bold text-center mb-12">Our Services</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
