@@ -73,20 +73,26 @@ export function Footer() {
                     <h4 className="text-[18px] font-bold mb-4">Connect With Us</h4>
 
                     <div className="flex flex-row gap-3">
-                        <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#39559e] 
+                        <a href="https://www.facebook.com/share/18heUSmytm/?mibextid=wwXIfr">
+                            <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#39559e] 
                         cursor-pointer duration-300">
-                            <FaFacebook className="text-xl" />
-                        </div>
+                                <FaFacebook className="text-xl" />
+                            </div>
+                        </a>
 
-                        <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#e1306c] 
+                        <a href="https://www.instagram.com/ccfcfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                            <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#e1306c] 
                         cursor-pointer duration-300">
-                            <FaInstagram className="text-xl" />
-                        </div>
+                                <FaInstagram className="text-xl" />
+                            </div>
+                        </a>
 
-                        <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#2980b0] 
+                        <a href="https://www.linkedin.com/company/capital-care-finance-company/posts/?feedView=all">
+                            <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#2980b0] 
                         cursor-pointer duration-300">
-                            <FaLinkedin className="text-xl" />
-                        </div>
+                                <FaLinkedin className="text-xl" />
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

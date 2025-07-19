@@ -9,7 +9,7 @@ import { Contact } from "./Components/Contact";
 import { Footer } from "./Components/Footer";
 
 // import pages
-import { ServiceOne } from "./Service1";
+import { ServiceOne } from "./Pages/Service1";
 
 // import route
 import { Routes, Route } from 'react-router-dom';
@@ -32,7 +32,7 @@ export default function App() {
             <Footer />
           </>
         } />
-        <Route path="/Service1" element={<ServiceOne />} />
+        <Route path="/service1" element={<ServiceOne />} />
       </Routes>
     </>
   )

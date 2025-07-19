@@ -9,6 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
+// import link
+import { Link } from 'react-scroll';
+
 // Home section
 export function Home() {
     // images
@@ -81,9 +84,17 @@ export function Home() {
                             p-8 text-white rounded-lg">
                                 <h2 className="text-3xl font-bold mb-2 mt-18">{slide.heading}</h2>
                                 <p className="mb-4 text-lg">{slide.text}</p>
-                                <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded transition cursor-pointer">
-                                    {slide.button}
-                                </button>
+                                <Link
+                                    to="services"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-60}
+                                >
+                                    <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded transition 
+                                    cursor-pointer">
+                                        {slide.button}
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </SwiperSlide>

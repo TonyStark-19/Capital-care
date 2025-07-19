@@ -8,7 +8,7 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { SlCreditCard } from "react-icons/sl";
 
 // import link
-import { Link } from "react-scroll";
+import { Link } from 'react-router-dom';
 
 // Services section
 export function Services() {
@@ -17,8 +17,8 @@ export function Services() {
             <h1 className="text-black text-4xl font-bold text-center mb-12">Our Services</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
-                <Link to="/Service1">
-                    <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                <Link to="/service1" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
                         <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
                         <h3 className="text-2xl text-blue-800 mb-4 font-bold">Home Loan</h3>
                         <p className="text-[16px] tracking-wider text-gray-700 mb-6">Get your dream home with our competitive
