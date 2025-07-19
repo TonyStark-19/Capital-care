@@ -8,18 +8,32 @@ import { WhyUS } from "./Components/Why-Us";
 import { Contact } from "./Components/Contact";
 import { Footer } from "./Components/Footer";
 
+// import pages
+import { ServiceOne } from "./Service1";
+
+// import route
+import { Routes, Route } from 'react-router-dom';
+
 // Main app
 export default function App() {
   return (
-    <div className="h-full">
+    <>
       <Navbar />
-      <Home />
-      <About />
-      <Services />
-      <Banking />
-      <WhyUS />
-      <Contact />
-      <Footer />
-    </div>
+
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Banking />
+            <WhyUS />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/Service1" element={<ServiceOne />} />
+      </Routes>
+    </>
   )
 }

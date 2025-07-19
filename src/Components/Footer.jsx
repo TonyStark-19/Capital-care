@@ -1,10 +1,13 @@
 // react icons
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
+// import link
+import { Link } from 'react-scroll';
+
 // footer section
 export function Footer() {
     return (
-        <div className="py-12 px-5 bg-blue-950 text-white">
+        <div className="pt-12 pb-8 px-5 bg-blue-950 text-white">
             <div className="flex flex-row justify-evenly">
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Capital Care Finance Company</h4>
@@ -14,10 +17,45 @@ export function Footer() {
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Quick Links</h4>
                     <ul>
-                        <li className="text-[16px] mb-2 cursor-pointer">Home</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">About</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Services</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Contact</li>
+                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
+                            <Link
+                                to="home"
+                                smooth={true}
+                                duration={500}
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
+                            <Link
+                                to="about"
+                                smooth={true}
+                                duration={500}
+                                offset={-60}
+                            >
+                                About
+                            </Link>
+                        </li>
+                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
+                            <Link
+                                to="services"
+                                smooth={true}
+                                duration={500}
+                                offset={-60}
+                            >
+                                Services
+                            </Link>
+                        </li>
+                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
+                            <Link
+                                to="contact"
+                                smooth={true}
+                                duration={500}
+                                offset={-60}
+                            >
+                                Contact
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
@@ -36,17 +74,17 @@ export function Footer() {
 
                     <div className="flex flex-row gap-3">
                         <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#39559e] 
-                        cursor-pointer">
+                        cursor-pointer duration-300">
                             <FaFacebook className="text-xl" />
                         </div>
 
                         <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#e1306c] 
-                        cursor-pointer">
+                        cursor-pointer duration-300">
                             <FaInstagram className="text-xl" />
                         </div>
 
                         <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#2980b0] 
-                        cursor-pointer">
+                        cursor-pointer duration-300">
                             <FaLinkedin className="text-xl" />
                         </div>
                     </div>

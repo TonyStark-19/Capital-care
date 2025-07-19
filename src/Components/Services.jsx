@@ -7,6 +7,9 @@ import { FaStarOfLife } from "react-icons/fa6";
 import { MdHealthAndSafety } from "react-icons/md";
 import { SlCreditCard } from "react-icons/sl";
 
+// import link
+import { Link } from "react-scroll";
+
 // Services section
 export function Services() {
     return (
@@ -14,13 +17,15 @@ export function Services() {
             <h1 className="text-black text-4xl font-bold text-center mb-12">Our Services</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Home Loan</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Get your dream home with our competitive
-                        home loan solutions. Easy approvals and flexible repayment options.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/Service1">
+                    <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                        <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Home Loan</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Get your dream home with our competitive
+                            home loan solutions. Easy approvals and flexible repayment options.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
                 <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
                     <FiUsers className="text-blue-800 text-3xl mb-6" />

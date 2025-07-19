@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 export function Navbar() {
     return (
         <div className="w-full px-30 py-4 flex flex-row justify-between
-        bg-white border-2 border-b-gray-300 fixed z-4">
+        bg-white border-2 border-b-gray-300 top-0 fixed z-40">
             <div className="flex flex-row items-center gap-2 cursor-pointer">
                 <img className="w-12" src="images\logo.png" alt="logo"></img>
                 <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
@@ -27,6 +27,7 @@ export function Navbar() {
                         to="about"
                         smooth={true}
                         duration={500}
+                        offset={-60}
                         className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
                     >
                         About
@@ -37,6 +38,7 @@ export function Navbar() {
                         to="services"
                         smooth={true}
                         duration={500}
+                        offset={-60}
                         className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
                     >
                         Services
@@ -47,6 +49,7 @@ export function Navbar() {
                         to="contact"
                         smooth={true}
                         duration={500}
+                        offset={-60}
                         className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
                     >
                         Contact
