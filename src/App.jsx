@@ -18,11 +18,10 @@ import { Routes, Route } from 'react-router-dom';
 export default function App() {
   return (
     <>
-      <Navbar />
-
       <Routes>
         <Route path="/" element={
           <>
+            <Navbar />
             <Home />
             <About />
             <Services />
