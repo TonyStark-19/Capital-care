@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 // import use state
 import { useState } from "react";
 
+// import faq data
+import { faqData } from "./data/faqData";
+
 // service 1 : home loan
 export function ServiceOne() {
     return (
@@ -82,10 +85,7 @@ export function Header() {
                 <h2 className="text-[40px] font-bold mb-2 mt-18">The Care of Your Financial Needs</h2>
                 <p className="mb-4 text-[20px]">Your trusted partner in financial solutions, providing seamless services
                     in loans and insurance.</p>
-                <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded transition 
-                        cursor-pointer text-[16px] uppercase font-bold">
-                    Apply
-                </button>
+                <Button />
             </div>
         </div>
     )
@@ -95,7 +95,7 @@ export function Header() {
 export function Button() {
     return (
         <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:scale-105 
-        transition-transform rounded-lg text-[16px] uppercase font-bold tracking-wide">
+        transition-transform rounded-lg text-[16px] uppercase font-bold tracking-wide cursor-pointer">
             Apply
         </button>
     );
@@ -107,22 +107,6 @@ function Info() {
     const [selectedSection, setSelectedSection] = useState("features");
     // for FAQs
     const [openIndex, setOpenIndex] = useState(null);
-
-    // FAQ data
-    const faqData = [
-        {
-            question: "How long does the loan approval process take?",
-            answer: "Typically, our loan approval process takes 3–7 working days from document submission."
-        },
-        {
-            question: "Can I prepay my home loan?",
-            answer: "Yes, you can prepay your home loan with minimal or no prepayment charges."
-        },
-        {
-            question: "What is the maximum loan tenure?",
-            answer: "We offer home loans with a maximum tenure of 30 years."
-        }
-    ];
 
     // tabs
     const tabs = [
@@ -143,8 +127,8 @@ function Info() {
                         onClick={() => setSelectedSection(tab.id)}
                         className={`p-4 text-[17px] cursor-pointer rounded-r-xl duration-200
                             ${selectedSection === tab.id
-                                ? "bg-blue-500 text-white"
-                                : "hover:bg-blue-500 hover:text-white"
+                                ? "bg-gray-300"
+                                : "hover:bg-gray-300"
                             }`}
                     >
                         {tab.label}
@@ -191,18 +175,7 @@ function Info() {
                             </p>
                         </div>
 
-                        <h3 className='text-2xl font-semibold mt-6 mb-4 text-blue-800'>Why Choose Capital Care Finance
-                            Company?</h3>
-                        <div className='flex flex-wrap gap-3 mb-6'>
-                            {["Easy Documentation", "Quick Approval", "Higher Loan Amounts", "Flexible Repayment",
-                                "Flexible Tenor", "Attractive Interest Rates", "Transparent Process"]
-                                .map(item => (
-                                    <div key={item} className='bg-blue-50 text-blue-800 px-4 py-2 rounded shadow text-[15px]'>
-                                        {item}
-                                    </div>
-                                ))}
-                        </div>
-
+                        <Item />
                         <Button />
                     </>
                 )}
@@ -326,21 +299,54 @@ function Info() {
 // FAQ item
 function FAQItem({ question, answer, isOpen, onClick }) {
     return (
-        <div
-            className="border border-gray-300 rounded-lg shadow-sm cursor-pointer transition overflow-hidden"
-            onClick={onClick}
-        >
-            <div className="flex justify-between items-center px-6 py-4 bg-blue-50 hover:bg-blue-100 transition">
-                <h4 className="text-[17px] font-semibold text-gray-800">{question}</h4>
-                {isOpen ? <FaChevronUp className="text-blue-600" /> : <FaChevronDown className="text-blue-600" />}
-            </div>
+        <div className="rounded-md shadow-md overflow-hidden border border-gray-200">
+            <button
+                onClick={onClick}
+                className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
+                cursor-pointer"
+            >
+                <h3 className="text-[17px] font-semibold text-gray-800">{question}</h3>
+                <span>
+                    {isOpen ? (
+                        <FaChevronUp className="text-blue-600" />
+                    ) : (
+                        <FaChevronDown className="text-blue-600" />
+                    )}
+                </span>
+            </button>
 
-            <div className={`px-6 pb-4 pt-0 text-gray-700 text-[16px] leading-relaxed transition-all duration-300 ease-in-out 
-                ${isOpen ? "max-h-[800px] opacity-100" : "max-h-0 overflow-hidden opacity-0"}`}>
-                {answer}
-            </div>
+            {isOpen && (
+                <div
+                    className={`
+                    px-5 bg-white text-gray-800 border-t border-gray-200 
+                    transition-all duration-300 ease-in-out overflow-hidden
+                    ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}
+                `}
+                >
+                    {answer}
+                </div>
+            )}
         </div>
     );
+}
+
+// items div for feature section
+export function Item() {
+    return (
+        <>
+            <h3 className='text-2xl font-semibold mt-6 mb-4 text-blue-800'>Why Choose Capital Care Finance Company?</h3>
+
+            <div className='flex flex-wrap gap-3 mb-6'>
+                {["Easy Documentation", "Quick Approval", "Higher Loan Amounts", "Flexible Repayment",
+                    "Flexible Tenor", "Attractive Interest Rates", "Transparent Process"]
+                    .map(item => (
+                        <div key={item} className='bg-blue-50 text-blue-800 px-4 py-2 rounded shadow text-[15px]'>
+                            {item}
+                        </div>
+                    ))}
+            </div>
+        </>
+    )
 }
 
 // footer section

@@ -27,61 +27,75 @@ export function Services() {
                     </div>
                 </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <FiUsers className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Education Loan</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Simple and affordable funding to support
-                        your higher education journey.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service2" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <FiUsers className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Education Loan</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Simple and affordable funding to support
+                            your higher education journey.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <PiSuitcase className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Business Loan</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Empower your business growth with our
-                        tailored business loan solutions and competitive rates.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service3" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <PiSuitcase className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Business Loan</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Empower your business growth with our
+                            tailored business loan solutions and competitive rates.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <FiUser className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Personal Loan</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Quick personal loans for your immediate needs
-                        with minimal documentation and fast approval.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service4" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <FiUser className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Personal Loan</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Quick personal loans for your immediate needs
+                            with minimal documentation and fast approval.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <FiCreditCard className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Gold Loan</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Instant cash against your gold with
-                        low interest.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service5" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <FiCreditCard className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Gold Loan</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Instant cash against your gold with
+                            low interest.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <FaCar className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Car Loan</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Drive your dream car with our affordable
-                        car loan options and quick processing.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service6" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <FaCar className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Car Loan</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Drive your dream car with our affordable
+                            car loan options and quick processing.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <FiShield className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Credit Card</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Easy, rewarding, and secure spending
-                        with flexible repayments.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service7" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <FiShield className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Credit Card</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Easy, rewarding, and secure spending
+                            with flexible repayments.</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Loan Against Property</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Unlock your property's value with tailored
-                        loan solutions..</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                </div>
+                <Link to="/service8" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div>
+                        <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
+                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Loan Against Property</h3>
+                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Unlock your property's value with tailored
+                            loan solutions..</p>
+                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
+                    </div>
+                </Link>
 
                 <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
                     <FaStarOfLife className="text-blue-800 text-3xl mb-6" />

@@ -62,9 +62,15 @@ export function Footer() {
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Services</h4>
                     <ul>
-                        <li className="text-[16px] mb-2 cursor-pointer">Home Loan</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Business Loan</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Personal Loan</li>
+                        <a href="/service1">
+                            <li className="text-[16px] mb-2 cursor-pointer">Home Loan</li>
+                        </a>
+                        <a href="/service3">
+                            <li className="text-[16px] mb-2 cursor-pointer">Business Loan</li>
+                        </a>
+                        <a href="/service4">
+                            <li className="text-[16px] mb-2 cursor-pointer">Personal Loan</li>
+                        </a>
                         <li className="text-[16px] mb-2 cursor-pointer">Insurance</li>
                     </ul>
                 </div>
