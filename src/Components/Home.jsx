@@ -19,26 +19,22 @@ export function Home() {
         {
             image: "images/business-loan.jpeg",
             heading: "Business Growth Financing",
-            text: "Empower your business with our flexible financing options.",
-            button: "View Services"
+            text: "Empower your business with our flexible financing options."
         },
         {
             image: "images/home-loan.jpeg",
             heading: "Home Loan Solutions",
-            text: "Make your dream home a reality with our flexible plans.",
-            button: "View Services"
+            text: "Make your dream home a reality with our flexible plans."
         },
         {
             image: "images/personal-loan.jpeg",
             heading: "Personal Financial Solutions",
-            text: "Your dream home is just a loan away with our competitive rates.",
-            button: "View Services"
+            text: "Your dream home is just a loan away with our competitive rates."
         },
         {
             image: "images/insurance.jpeg",
             heading: "Insurance Protection",
-            text: "Comprehensive coverage for what matters most to you.",
-            button: "View Services"
+            text: "Comprehensive coverage for what matters most to you."
         }
     ];
 
@@ -92,7 +88,7 @@ export function Home() {
                                 >
                                     <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded transition 
                                     cursor-pointer">
-                                        {slide.button}
+                                        View Services
                                     </button>
                                 </Link>
                             </div>

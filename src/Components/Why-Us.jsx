@@ -5,35 +5,46 @@ import { SlCreditCard } from "react-icons/sl";
 
 // Why-us secction
 export function WhyUS() {
+    // benifits
+    const benifits = [
+        {
+            icon: <GrUserExpert className="text-blue-800 text-3xl" />,
+            name: "Expert Guidance",
+            description: "Professional team with years of experience"
+        },
+        {
+            icon: <AiOutlineStock className="text-blue-800 text-3xl" />,
+            name: "Fast Processing",
+            description: "Quick approvals with minimal documentation"
+        },
+        {
+            icon: <SlCreditCard className="text-blue-800 text-3xl" />,
+            name: "Competitive Rates",
+            description: "Best-in-market rates for all services"
+        }
+    ];
+
+    // benifits2
+    const benefits2 = [
+        { name: "Competitive Commission Rates" },
+        { name: "Exclusive Partner Portal" },
+        { name: "Marketing Support" },
+        { name: "Dedicated Relationship Manager" }
+    ];
+
     return (
         <>
             <div className="py-12 px-6">
                 <h1 className="text-black text-4xl font-bold text-center mb-12">Why Choose Us</h1>
 
                 <div className="flex flex-row justify-center gap-5">
-                    <div className="w-[30%] flex flex-col justify-center items-center p-8">
-                        <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">
-                            <GrUserExpert className="text-blue-800 text-3xl" />
+                    {benifits.map((benifit, idx) => (
+                        <div className="w-[30%] flex flex-col justify-center items-center p-8" key={idx}>
+                            <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">{benifit.icon}</div>
+                            <h3 className="text-[20px] font-bold mb-2.5">{benifit.name}</h3>
+                            <p className="text-[16px] text-gray-700">{benifit.description}</p>
                         </div>
-                        <h3 className="text-[20px] font-bold mb-2.5">Expert Guidance</h3>
-                        <p className="text-[16px] text-gray-700">Professional team with years of experience</p>
-                    </div>
-
-                    <div className="w-[30%] flex flex-col justify-center items-center p-8">
-                        <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">
-                            <AiOutlineStock className="text-blue-800 text-3xl" />
-                        </div>
-                        <h3 className="text-[20px] font-bold mb-2.5">Fast Processing</h3>
-                        <p className="text-[16px] text-gray-700">Quick approvals with minimal documentation</p>
-                    </div>
-
-                    <div className="w-[30%] flex flex-col justify-center items-center p-8">
-                        <div className="bg-gray-100 rounded-[50%] p-4.5 mb-6">
-                            <SlCreditCard className="text-blue-800 text-3xl" />
-                        </div>
-                        <h3 className="text-[20px] font-bold mb-2.5">Competitive Rates</h3>
-                        <p className="text-[16px] text-gray-700">Best-in-market rates for all services</p>
-                    </div>
+                    ))}
                 </div>
             </div>
 
@@ -62,25 +73,11 @@ export function WhyUS() {
                         these benefits:</p>
 
                     <div className="my-5 flex flex-row flex-wrap gap-4">
-                        <div className="py-2.5 px-4 text-[14px] bg-gray-200 rounded-lg">
-                            <span className="text-blue-900 text-[16px] mr-1.5">✓</span>
-                            Competitive Commission Rates
-                        </div>
-
-                        <div className="py-2.5 px-4 text-[14px] bg-gray-200 rounded-lg">
-                            <span className="text-blue-900 text-[16px] mr-1.5">✓</span>
-                            Exclusive Partner Portal
-                        </div>
-
-                        <div className="py-2.5 px-4 text-[14px] bg-gray-200 rounded-lg">
-                            <span className="text-blue-900 text-[16px] mr-1.5">✓</span>
-                            Marketing Support
-                        </div>
-
-                        <div className="py-2.5 px-4 text-[14px] bg-gray-200 rounded-lg">
-                            <span className="text-blue-900 text-[16px] mr-1.5">✓</span>
-                            Dedicated Relationship Manager
-                        </div>
+                        {benefits2.map((benifit, idx) => (
+                            <div className="py-2.5 px-4 text-[14px] bg-gray-200 rounded-lg" key={idx}>
+                                <span className="text-blue-900 text-[16px] mr-1.5">✓</span> {benifit.name}
+                            </div>
+                        ))}
                     </div>
 
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMrZDEQCbhDQ-4fQHWgkQNLatwP0cXlhYg-z_eIporEpYOhQ/viewform?usp=header">

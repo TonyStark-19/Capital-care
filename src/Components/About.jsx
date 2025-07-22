@@ -5,6 +5,14 @@ import { MdErrorOutline } from "react-icons/md";
 
 // About section
 export function About() {
+    // core values
+    const values = [
+        { icon: <FiShield className="text-2xl text-blue-700" />, name: "Integrity" },
+        { icon: <FiUser className="text-2xl text-blue-700" />, name: "Customer First" },
+        { icon: <SiTicktick className="text-2xl text-blue-700" />, name: "Efficiency" },
+        { icon: <MdErrorOutline className="text-2xl text-blue-700" />, name: "Efficiency" }
+    ];
+
     return (
         <div className="p-12 scroll-mt-36" id="about">
             <h1 className="text-black text-4xl font-bold text-center mb-12">About Us</h1>
@@ -43,21 +51,13 @@ export function About() {
                     after:h-1 after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full">Core Values</h2>
 
                     <div className="flex flex-row flex-wrap gap-5 w-full mt-5">
-                        <div className="flex flex-row items-center gap-2.5 w-[45%] text-[16px] rounded-lg bg-gray-100 p-4">
-                            <FiShield className="text-2xl text-blue-700" />
-                            Integrity</div>
-
-                        <div className="flex flex-row items-center gap-2.5 w-[45%] text-[16px] rounded-lg bg-gray-100 p-4">
-                            <FiUser className="text-2xl text-blue-700" />
-                            Customer First</div>
-
-                        <div className="flex flex-row items-center gap-2.5 w-[45%] text-[16px] rounded-lg bg-gray-100 p-4">
-                            <SiTicktick className="text-xl text-blue-700" />
-                            Efficiency</div>
-
-                        <div className="flex flex-row items-center gap-2.5 w-[45%] text-[16px] rounded-lg bg-gray-100 p-4">
-                            <MdErrorOutline className="text-2xl text-blue-700" />
-                            Innovation</div>
+                        {values.map((value, idx) => (
+                            <div key={idx}
+                                className="flex flex-row items-center gap-2.5 w-[45%] text-[16px] rounded-lg bg-gray-100
+                                hover:bg-gray-200 duration-200 p-4">
+                                {value.icon} {value.name}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

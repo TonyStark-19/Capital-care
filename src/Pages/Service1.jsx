@@ -24,47 +24,34 @@ export function ServiceOne() {
 
 // Navbar component
 export function Navbar() {
+    // quick links
+    const quickLinks = [
+        { name: "Home" },
+        { name: "About" },
+        { name: "Services" },
+        { name: "Contact" }
+    ];
+
     return (
         <div className="w-full px-30 py-4 flex flex-row justify-between
         bg-white border-2 border-b-gray-300 top-0 fixed z-40">
             <div className="flex flex-row items-center gap-2 cursor-pointer">
-                <img className="w-12" src="images\logo.png" alt="logo"></img>
+                <img className="w-12" src="images/logo.png" alt="logo"></img>
                 <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
             </div>
 
             <ul className="flex flex-row items-center gap-8 text-[17px]">
-                <li>
-                    <Link
-                        to="/"
-                        className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
-                    >
-                        Home
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
-                    >
-                        About
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
-                    >
-                        Services
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
-                    >
-                        Contact
-                    </Link>
-                </li>
+                {quickLinks.map((quickLink, idx) => (
+                    <li
+                        key={idx}>
+                        <Link
+                            to="/"
+                            className="cursor-pointer font-semibold text-gray-700 hover:text-blue-700"
+                        >
+                            {quickLink.name}
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </div>
     )
@@ -117,6 +104,36 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "Loan for Building Your Home",
+            description: "If you own land but need financial backing to construct your residence, this option provides the support required to bring your home to life—from laying the foundation to completing major construction work."
+        },
+        {
+            title: "Loan for Home Expansion",
+            description: "Planning to add more space or create an additional floor? Whether it's an annexe, extra room, or structural extension, this loan helps you grow your living space without financial strain."
+        },
+        {
+            title: "Loan for Home Renovation",
+            description: "Give your home a fresh look with a renovation loan that finances everything from fixing aging interiors to upgrading lighting, plumbing, and more—enhancing both comfort and aesthetics."
+        },
+        {
+            title: "Housing Loan for NRIs",
+            description: "For Non-Resident Indians looking to purchase residential property in India, this loan option offers dedicated support with a streamlined process tailored to overseas applicants."
+        }
+    ];
+
+    // rates
+    const rateRows = [
+        { label: "Loan Processing Fees", value: "0.25% to 2% of Loan Amount" },
+        { label: "Loan Cancellation", value: "Nill - 5% (according to Bank/NBFC)" },
+        { label: "Stamp Duty Charges", value: "As per the Value of the Property and State Tax" },
+        { label: "Legal Fees", value: "As per actual" },
+        { label: "Penal Charges", value: "Usually 2% per month" },
+        { label: "EMI / Cheque Bounce Charges", value: "Approx 500/-" }
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -152,27 +169,11 @@ function Info() {
                         </p>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Loan for Building Your Home: </span>If you own
-                                land but need financial backing to construct your residence, this option provides the support
-                                required to bring your home to life—from laying the foundation to completing major construction
-                                work.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Loan for Home Expansion: </span>Planning to add
-                                more space or create an additional floor? Whether it's an annexe, extra room, or structural
-                                extension, this loan helps you grow your living space without financial strain.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Loan for Home Renovation: </span>Give your home
-                                a fresh look with a renovation loan that finances everything from fixing aging interiors to
-                                upgrading lighting, plumbing, and more—enhancing both comfort and aesthetics.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Housing Loan for NRIs: </span>For Non-Resident
-                                Indians looking to purchase residential property in India, this loan option offers dedicated
-                                support with a streamlined process tailored to overseas applicants.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -188,11 +189,12 @@ function Info() {
                             Company, you must meet the following criteria:</p>
 
                         <ul className='list-disc pl-6 text-[18px] text-gray-800 space-y-2 mb-6'>
-                            <li>Age: 21-65 years</li>
-                            <li>Employment: Salaried or Self-employed professionals</li>
-                            <li>Minimum Income: ₹3,00,000 per annum</li>
-                            <li>Credit Score: 700 or above</li>
-                            <li>Stable job/business history of at least 2 years</li>
+                            {["Age: 21-65 years", "Employment: Salaried or Self-employed professionals",
+                                "Minimum Income: ₹3,00,000 per annum", "Credit Score: 700 or above",
+                                "Stable job/business history of at least 2 years"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />
@@ -206,20 +208,22 @@ function Info() {
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px]'>
-                            <li>Identity Proof (Aadhaar/PAN/Passport)</li>
-                            <li>Address Proof</li>
-                            <li>Last 3 months' salary slips</li>
-                            <li>Bank statements for the last 6 months</li>
-                            <li>Form 16 or Income Tax Returns</li>
+                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof",
+                                "Last 3 months' salary slips", "Bank statements for the last 6 months",
+                                "Form 16 or Income Tax Returns"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Business registration documents</li>
-                            <li>Income Tax Returns for last 2 years</li>
-                            <li>Profit & Loss statements</li>
-                            <li>Business bank statements</li>
+                            {["Business registration documents", "Income Tax Returns for last 2 years",
+                                "Profit & Loss statements", "Business bank statements"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />
@@ -239,30 +243,12 @@ function Info() {
                             </thead>
 
                             <tbody>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Processing Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>0.25% to 2% of Loan Amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Cancellation</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nill - 5% (according to Bank/NBFC)</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Stamp Duty Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As per the Value of the Property and State Tax</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Legal Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As per actual</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Penal Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Usually 2% per month</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>EMI / Cheque Bounce Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Approx 500/-</td>
-                                </tr>
+                                {rateRows.map((row, idx) => (
+                                    <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 
@@ -293,6 +279,25 @@ function Info() {
                 )}
             </div>
         </div >
+    )
+}
+
+// items div for feature section
+export function Item() {
+    return (
+        <>
+            <h3 className='text-2xl font-semibold mt-6 mb-4 text-blue-800'>Why Choose Capital Care Finance Company?</h3>
+
+            <div className='flex flex-wrap gap-4 mb-6'>
+                {["Easy Documentation", "Quick Approval", "Higher Loan Amounts", "Flexible Repayment",
+                    "Flexible Tenor", "Attractive Interest Rates", "Transparent Process"]
+                    .map(item => (
+                        <div key={item} className='bg-blue-50 text-blue-800 px-4 py-2 rounded shadow text-[15px]'>
+                            {item}
+                        </div>
+                    ))}
+            </div>
+        </>
     )
 }
 
@@ -330,27 +335,43 @@ function FAQItem({ question, answer, isOpen, onClick }) {
     );
 }
 
-// items div for feature section
-export function Item() {
-    return (
-        <>
-            <h3 className='text-2xl font-semibold mt-6 mb-4 text-blue-800'>Why Choose Capital Care Finance Company?</h3>
-
-            <div className='flex flex-wrap gap-3 mb-6'>
-                {["Easy Documentation", "Quick Approval", "Higher Loan Amounts", "Flexible Repayment",
-                    "Flexible Tenor", "Attractive Interest Rates", "Transparent Process"]
-                    .map(item => (
-                        <div key={item} className='bg-blue-50 text-blue-800 px-4 py-2 rounded shadow text-[15px]'>
-                            {item}
-                        </div>
-                    ))}
-            </div>
-        </>
-    )
-}
-
 // footer section
 export function Footer() {
+    // quick links
+    const quickLinks = [
+        { name: "Home" },
+        { name: "About" },
+        { name: "Services" },
+        { name: "Contact" }
+    ];
+
+    // service links
+    const serviceLinks = [
+        { link: "/service1", name: "Home Loan" },
+        { link: "/service3", name: "Business Loan" },
+        { link: "/service4", name: "Personal Loan" },
+        { link: "/service9", name: "Insurance" }
+    ];
+
+    // social links
+    const socialLinks = [
+        {
+            link: "https://www.facebook.com/share/18heUSmytm/?mibextid=wwXIfr",
+            icon: <FaFacebook className="text-xl" />,
+            hover: "hover:text-[#39559e]"
+        },
+        {
+            link: "https://www.instagram.com/ccfcfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+            icon: <FaInstagram className="text-xl" />,
+            hover: "hover:text-[#e1306c]"
+        },
+        {
+            link: "https://www.linkedin.com/company/capital-care-finance-company/posts/?feedView=all",
+            icon: <FaLinkedin className="text-xl" />,
+            hover: "hover:text-[#2980b0]"
+        }
+    ];
+
     return (
         <div className="pt-12 pb-8 px-5 bg-blue-950 text-white">
             <div className="flex flex-row justify-evenly">
@@ -362,44 +383,27 @@ export function Footer() {
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Quick Links</h4>
                     <ul>
-                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
-                            <Link
-                                to="/"
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
-                            <Link
-                                to="/"
-                            >
-                                About
-                            </Link>
-                        </li>
-                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
-                            <Link
-                                to="/"
-                            >
-                                Services
-                            </Link>
-                        </li>
-                        <li className="text-[16px] mb-2 cursor-pointer hover:ml-1 duration-300">
-                            <Link
-                                to="/"
-                            >
-                                Contact
-                            </Link>
-                        </li>
+                        {quickLinks.map((quickLink, idx) => (
+                            <li className="text-[16px] mb-2 cursor-pointer duration-300"
+                                key={idx}>
+                                <Link
+                                    to="/"
+                                >
+                                    {quickLink.name}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Services</h4>
                     <ul>
-                        <li className="text-[16px] mb-2 cursor-pointer">Home Loan</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Business Loan</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Personal Loan</li>
-                        <li className="text-[16px] mb-2 cursor-pointer">Insurance</li>
+                        {serviceLinks.map((serviceLink, idx) => (
+                            <li key={idx} className="text-[16px] mb-2 cursor-pointer">
+                                <a href={serviceLink.link}>{serviceLink.name}</a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -407,26 +411,14 @@ export function Footer() {
                     <h4 className="text-[18px] font-bold mb-4">Connect With Us</h4>
 
                     <div className="flex flex-row gap-3">
-                        <a href="https://www.facebook.com/share/18heUSmytm/?mibextid=wwXIfr">
-                            <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#39559e] 
-                        cursor-pointer duration-300">
-                                <FaFacebook className="text-xl" />
-                            </div>
-                        </a>
-
-                        <a href="https://www.instagram.com/ccfcfirst?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                            <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#e1306c] 
-                        cursor-pointer duration-300">
-                                <FaInstagram className="text-xl" />
-                            </div>
-                        </a>
-
-                        <a href="https://www.linkedin.com/company/capital-care-finance-company/posts/?feedView=all">
-                            <div className="border-2 border-white rounded-[50%] p-2 hover:bg-white hover:text-[#2980b0] 
-                        cursor-pointer duration-300">
-                                <FaLinkedin className="text-xl" />
-                            </div>
-                        </a>
+                        {socialLinks.map((socialLink, idx) => (
+                            <a href={socialLink.link} key={idx} target="_blank" rel="noopener noreferrer">
+                                <div className={`border-2 border-white rounded-[50%] p-2 hover:bg-white ${socialLink.hover} 
+                                cursor-pointer duration-300`}>
+                                    {socialLink.icon}
+                                </div>
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>

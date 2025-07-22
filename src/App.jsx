@@ -17,6 +17,9 @@ import { ServiceFive } from "./Pages/Service5";
 import { ServiceSix } from "./Pages/Service6";
 import { ServiceSeven } from "./Pages/Service7";
 import { ServiceEight } from "./Pages/Service8";
+import { ServiceNine } from "./Pages/Service9";
+import { ServiceTen } from "./Pages/Service10";
+import { ServiceEleven } from "./Pages/Service11";
 
 // import route
 import { Routes, Route } from 'react-router-dom';
@@ -46,6 +49,9 @@ export default function App() {
         <Route path="/service6" element={<ServiceSix />} />
         <Route path="/service7" element={<ServiceSeven />} />
         <Route path="/service8" element={<ServiceEight />} />
+        <Route path="/service9" element={<ServiceNine />} />
+        <Route path="/service10" element={<ServiceTen />} />
+        <Route path="/service11" element={<ServiceEleven />} />
       </Routes>
     </>
   )

@@ -12,114 +12,105 @@ import { Link } from 'react-router-dom';
 
 // Services section
 export function Services() {
+    // box content
+    const boxes = [
+        {
+            link: "/service1",
+            icon: <IoHomeOutline className="text-blue-800 text-3xl mb-6" />,
+            name: "Home Loan",
+            description: "Get your dream home with our competitive home loan solutions. Easy approvals and flexible repayment options.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service2",
+            icon: <FiUsers className="text-blue-800 text-3xl mb-6" />,
+            name: "Education Loan",
+            description: "Simple and affordable funding to support your higher education journey.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service3",
+            icon: <PiSuitcase className="text-blue-800 text-3xl mb-6" />,
+            name: "Business Loan",
+            description: "Empower your business growth with our tailored business loan solutions and competitive rates.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service4",
+            icon: <FiUser className="text-blue-800 text-3xl mb-6" />,
+            name: "Personal Loan",
+            description: "Quick personal loans for your immediate needs with minimal documentation and fast approval.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service5",
+            icon: <FiCreditCard className="text-blue-800 text-3xl mb-6" />,
+            name: "Gold Loan",
+            description: "Instant cash against your gold with low interest.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service6",
+            icon: <FaCar className="text-blue-800 text-3xl mb-6" />,
+            name: "Car Loan",
+            description: "Drive your dream car with our affordable car loan options and quick processing.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service7",
+            icon: <FiShield className="text-blue-800 text-3xl mb-6" />,
+            name: "Credit Loan",
+            description: "Easy, rewarding, and secure spending with flexible repayments.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service8",
+            icon: <IoHomeOutline className="text-blue-800 text-3xl mb-6" />,
+            name: "Loan Against Property",
+            description: "Unlock your property's value with tailored loan solutions.",
+            btn: "Learn More →"
+        },
+        {
+            link: "/service9",
+            icon: <FaStarOfLife className="text-blue-800 text-3xl mb-6" />,
+            name: "Life Insurance",
+            description: "Protect Your Loved One's Future With Our Reliable Life Insurance Plans.",
+            btn: "Starting from ₹ 450/month* →"
+        },
+        {
+            link: "/service10",
+            icon: <MdHealthAndSafety className="text-blue-800 text-3xl mb-6" />,
+            name: "Health Insurance",
+            description: "Ensuring Your Health Is In Good Hands - Explore Our Top-notch Insurance Solutions.",
+            btn: "Starting from ₹ 450/month* →"
+        },
+        {
+            link: "/service11",
+            icon: <SlCreditCard className="text-blue-800 text-3xl mb-6" />,
+            name: "General Insurance",
+            description: "Insurance Made Easy - Your Protection, Our Expertise.",
+            btn: "Starting from ₹ 450/month* →"
+        }
+    ];
+
     return (
         <div className="py-12 px-4 bg-gray-50" id="services">
             <h1 className="text-black text-4xl font-bold text-center mb-12">Our Services</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
-                <Link to="/service1" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Home Loan</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Get your dream home with our competitive
-                            home loan solutions. Easy approvals and flexible repayment options.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service2" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <FiUsers className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Education Loan</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Simple and affordable funding to support
-                            your higher education journey.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service3" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <PiSuitcase className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Business Loan</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Empower your business growth with our
-                            tailored business loan solutions and competitive rates.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service4" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <FiUser className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Personal Loan</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Quick personal loans for your immediate needs
-                            with minimal documentation and fast approval.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service5" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <FiCreditCard className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Gold Loan</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Instant cash against your gold with
-                            low interest.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service6" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <FaCar className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Car Loan</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Drive your dream car with our affordable
-                            car loan options and quick processing.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service7" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <FiShield className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Credit Card</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Easy, rewarding, and secure spending
-                            with flexible repayments.</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <Link to="/service8" className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <div>
-                        <IoHomeOutline className="text-blue-800 text-3xl mb-6" />
-                        <h3 className="text-2xl text-blue-800 mb-4 font-bold">Loan Against Property</h3>
-                        <p className="text-[16px] tracking-wider text-gray-700 mb-6">Unlock your property's value with tailored
-                            loan solutions..</p>
-                        <button className="text-[14px] text-blue-800 font-bold">Learn More →</button>
-                    </div>
-                </Link>
-
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <FaStarOfLife className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Life Insurance</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Protect Your Loved One's Future With
-                        Our Reliable Life Insurance Plans.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Starting from ₹ 450/month* →</button>
-                </div>
-
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <MdHealthAndSafety className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">Health Insurance</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Ensuring Your Health Is In Good Hands
-                        - Explore Our Top-notch Insurance Solutions.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Starting from ₹ 450/month* →</button>
-                </div>
-
-                <div className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
-                    <SlCreditCard className="text-blue-800 text-3xl mb-6" />
-                    <h3 className="text-2xl text-blue-800 mb-4 font-bold">General Insurance</h3>
-                    <p className="text-[16px] tracking-wider text-gray-700 mb-6">Insurance Made Easy - Your Protection,
-                        Our Expertise.</p>
-                    <button className="text-[14px] text-blue-800 font-bold">Starting from ₹ 450/month* →</button>
-                </div>
+                {boxes.map((box, idx) => (
+                    <Link
+                        to={box.link}
+                        key={idx}
+                        className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                        <div>
+                            {box.icon}
+                            <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
+                            <p className="text-[16px] tracking-wider text-gray-700 mb-6">{box.description}</p>
+                            <button className="text-[14px] text-blue-800 font-bold">{box.btn}</button>
+                        </div>
+                    </Link>
+                ))}
             </div>
         </div>
     )
