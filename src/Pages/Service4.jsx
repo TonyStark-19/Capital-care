@@ -3,7 +3,6 @@ import { Navbar } from "./Service1";
 import { Footer } from "./Service1";
 import { Header } from "./Service1";
 import { Button } from "./Service1";
-import { faqData } from "./data/faqData";
 import { Item } from "./Service1";
 
 // import use state
@@ -72,11 +71,27 @@ function Info() {
     // rates
     const rateRows = [
         { label: "Loan Processing Fees", value: "2999/- to 5% of Loan Amount" },
-        { label: "Loan Cancellation", value: "3000 -5% of loan amount" },
+        { label: "Loan Cancellation", value: "3000 - 5% of loan amount" },
         { label: "Stamp Duty Charges", value: "150/- to 300/-" },
         { label: "Legal Fees", value: "As per actual" },
         { label: "Penal Charges", value: "Usually 2% per month" },
         { label: "EMI / Cheque Bounce Charges", value: "Approx 500/-" }
+    ];
+
+    // FAQ data
+    const faqData = [
+        {
+            question: "How long does the loan approval process take?",
+            answer: "Typically, our loan approval process takes 3–7 working days from document submission."
+        },
+        {
+            question: "Can I prepay my personal loan?",
+            answer: "Yes, you can prepay your personal loan with minimal or no prepayment charges."
+        },
+        {
+            question: "What is the maximum loan tenure?",
+            answer: "We offer personal loans with a maximum tenure of 30 years."
+        }
     ];
 
     return (
@@ -102,7 +117,8 @@ function Info() {
             <div className='w-full p-8'>
                 {selectedSection === "features" && (
                     <>
-                        <h2 className='text-4xl font-bold mb-4'>About Personal Loan</h2>
+                        <h2 className="text-4xl font-bold mb-4 relative text-blue-800 after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">About Personal Loan</h2>
 
                         <p className='text-[18px] leading-relaxed mb-4 text-gray-700'>
                             A personal loan offers a convenient and versatile financing solution, as it doesn’t require any
@@ -129,10 +145,11 @@ function Info() {
 
                 {selectedSection === "eligibility" && (
                     <>
-                        <h2 className='text-4xl font-bold mb-6'>Eligibility Criteria</h2>
+                        <h2 className="text-4xl font-bold mb-4 relative text-blue-800 after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Eligibility Criteria</h2>
 
-                        <p className='text-[18px] leading-relaxed text-gray-800 mb-4'>To qualify for a Personal Loan with Capital Care Finance
-                            Company, you must meet the following criteria:
+                        <p className='text-[18px] leading-relaxed text-gray-800 mb-4'>To qualify for a Personal Loan with
+                            Capital Care Finance Company, you must meet the following criteria:
                         </p>
 
                         <ul className='list-disc pl-6 text-[18px] text-gray-800 space-y-2 mb-6'>
@@ -147,14 +164,14 @@ function Info() {
 
                 {selectedSection === "documentation" && (
                     <>
-                        <h2 className='text-4xl font-bold mb-6'>Required Documentation</h2>
+                        <h2 className="text-4xl font-bold mb-4 relative text-blue-800 after:content-[''] after:block after:w-70
+                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Required Documentation</h2>
 
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px]'>
-                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof",
-                                "Last 3 months' salary slips", "Bank statements for the last 6 months",
-                                "Form 16 or Income Tax Returns"]
+                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof", "Last 3 months' salary slips",
+                                "Bank statements for the last 6 months", "Form 16 or Income Tax Returns"]
                                 .map(item => (
                                     <li key={item}>{item}</li>
                                 ))}
@@ -176,7 +193,8 @@ function Info() {
 
                 {selectedSection === "rates" && (
                     <>
-                        <h2 className='text-4xl font-bold mb-6'>Rates & Fees</h2>
+                        <h2 className="text-4xl font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Rates & Fees</h2>
 
                         <table className='w-full border text-left text-gray-700 shadow rounded-md overflow-hidden mb-6'>
                             <thead className='bg-blue-100 text-blue-800'>
@@ -202,7 +220,8 @@ function Info() {
 
                 {selectedSection === "faqs" && (
                     <>
-                        <h2 className='text-4xl font-bold mb-6'>Frequently Asked Questions</h2>
+                        <h2 className="text-4xl font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-70
+                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
 
                         <div className="flex flex-col gap-4">
                             {faqData.map((faq, index) => (
