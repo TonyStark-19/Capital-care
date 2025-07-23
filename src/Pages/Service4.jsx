@@ -40,6 +40,45 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "Simplified Debt Management",
+            description: "Merge several high-interest debts into one manageable loan with a potentially lower interest rate, helping you save on interest and stay organized."
+        },
+        {
+            title: "Home Improvement Projects",
+            description: "Upgrade or remodel your home with ease, boosting its market value and enhancing your comfort."
+        },
+        {
+            title: "Medical Support",
+            description: "Tackle unforeseen healthcare costs, such as surgeries or urgent treatments, without straining your savings."
+        },
+        {
+            title: "Urgent Financial Needs",
+            description: "Quickly access funds for unexpected events like vehicle repairs or other emergencies, helping you stay financially stable in times of need."
+        }
+    ];
+
+    // eligibility list
+    const eligibilityList = [
+        "Age: 21-60 years",
+        "Employment: Salaried or Self-employed professionals",
+        "Net monthly income should be 15,000/- for salaried and self-employed, yearly transactions should be a minimum of 2 lakhs",
+        "Credit Score: 700 or above",
+        "Stable job/business history of at least 2 years"
+    ];
+
+    // rates
+    const rateRows = [
+        { label: "Loan Processing Fees", value: "2999/- to 5% of Loan Amount" },
+        { label: "Loan Cancellation", value: "3000 -5% of loan amount" },
+        { label: "Stamp Duty Charges", value: "150/- to 300/-" },
+        { label: "Legal Fees", value: "As per actual" },
+        { label: "Penal Charges", value: "Usually 2% per month" },
+        { label: "EMI / Cheque Bounce Charges", value: "Approx 500/-" }
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -76,24 +115,11 @@ function Info() {
                         </p>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Simplified Debt Management: </span>Merge several
-                                high-interest debts into one manageable loan with a potentially lower interest rate, helping you
-                                save on interest and stay organized.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Home Improvement Projects: </span>Upgrade or
-                                remodel your home with ease, boosting its market value and enhancing your comfort.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Medical Support: </span>Tackle unforeseen
-                                healthcare costs, such as surgeries or urgent treatments, without straining your savings.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Urgent Financial Needs: </span>Quickly access
-                                funds for unexpected events like vehicle repairs or other emergencies, helping you stay
-                                financially stable in times of need.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -105,17 +131,14 @@ function Info() {
                     <>
                         <h2 className='text-4xl font-bold mb-6'>Eligibility Criteria</h2>
 
-                        <p className='text-[18px] text-gray-800 mb-4'>To qualify for a Personal Loan with Capital Care Finance
+                        <p className='text-[18px] leading-relaxed text-gray-800 mb-4'>To qualify for a Personal Loan with Capital Care Finance
                             Company, you must meet the following criteria:
                         </p>
 
                         <ul className='list-disc pl-6 text-[18px] text-gray-800 space-y-2 mb-6'>
-                            <li>Age: 21-60 years</li>
-                            <li>Employment: Salaried or Self-employed professionals</li>
-                            <li>Net monthly income should be 15,000/- for salaried and self-employed, yearly transactions should
-                                be a minimum of 2 lakhs</li>
-                            <li>Credit Score: 700 or above</li>
-                            <li>Stable job/business history of at least 2 years</li>
+                            {eligibilityList.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -129,20 +152,22 @@ function Info() {
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px]'>
-                            <li>Identity Proof (Aadhaar/PAN/Passport)</li>
-                            <li>Address Proof</li>
-                            <li>Last 3 months' salary slips</li>
-                            <li>Bank statements for the last 6 months</li>
-                            <li>Form 16 or Income Tax Returns</li>
+                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof",
+                                "Last 3 months' salary slips", "Bank statements for the last 6 months",
+                                "Form 16 or Income Tax Returns"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Business registration documents</li>
-                            <li>Income Tax Returns for last 2 years</li>
-                            <li>Profit & Loss statements</li>
-                            <li>Business bank statements</li>
+                            {["Business registration documents", "Income Tax Returns for last 2 years",
+                                "Profit & Loss statements", "Business bank statements"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />
@@ -162,30 +187,12 @@ function Info() {
                             </thead>
 
                             <tbody>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Processing Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>2999/- to 5% of Loan Amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Cancellation</td>
-                                    <td className='text-[18px] py-2.5 px-4'>3000 -5% of loan amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Stamp Duty Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>150/- to 300/-</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Legal Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As per actual</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Penal Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Usually 2% per month</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>EMI / Cheque Bounce Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Approx 500/-</td>
-                                </tr>
+                                {rateRows.map((row, idx) => (
+                                    <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 

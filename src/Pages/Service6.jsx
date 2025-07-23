@@ -40,6 +40,45 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "Flexible Financing",
+            description: "Choose a repayment term that fits your budget and lifestyle."
+        },
+        {
+            title: "Affordable Ownership",
+            description: "Avoid paying the full car price upfront and preserve your savings."
+        },
+        {
+            title: "Wide Eligibility",
+            description: "Available for salaried, self-employed individuals, and business owners."
+        }
+    ];
+
+    // eligibility list 1
+    const eligibilityList1 = [
+        "Individuals who are at least 21 years old at the time of loan application and no older than 60 at the end of the loan tenure",
+        "Individuals who have worked for at least two years, with at least one year with the current employer",
+        "Individuals with a minimum earning of Rs. 3,00,000 per year, including the income of the spouse/co-applicant."
+    ];
+
+    // eligibility list 2
+    const eligibilityList2 = [
+        "Individuals who are at least 21 years old at the time of application and no older than 65 at the end of the loan tenure.",
+        "Those who have been in business for at least two years.",
+        "Should earn at least Rs. 3,000,000 per year"
+    ];
+
+    // rates
+    const rateRows = [
+        { label: "Loan Processing Fees", value: "1.5% to 4% of Loan Amount" },
+        { label: "Loan Cancellation", value: "Usually around Rs 5,000" },
+        { label: "Stamp Duty Charges", value: "As Per Actuals" },
+        { label: "Legal Fees", value: "As Per Actuals" },
+        { label: "Penal Charges", value: "Usually @ 2% per month; 24% p.a." }
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -73,18 +112,11 @@ function Info() {
                         <h3 className='text-2xl font-semibold mb-4 text-blue-800'>Key Benefits and Uses:</h3>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Flexible Financing: </span>Choose a repayment
-                                term that fits your budget and lifestyle.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Affordable Ownership: </span>Avoid paying the full
-                                car price upfront and preserve your savings.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Wide Eligibility: </span>Available for salaried,
-                                self-employed individuals, and business owners.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -103,21 +135,17 @@ function Info() {
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px]'>
-                            <li>Individuals who are at least 21 years old at the time of loan application and no older than 60
-                                at the end of the loan tenure</li>
-                            <li>Individuals who have worked for at least two years, with at least one year with the current
-                                employer</li>
-                            <li>Individuals with a minimum earning of Rs. 3,00,000 per year, including the income of the
-                                spouse/co-applicant.</li>
+                            {eligibilityList1.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Individuals who are at least 21 years old at the time of application and no older than 65 at the
-                                end of the loan tenure.</li>
-                            <li>Those who have been in business for at least two years.</li>
-                            <li>Should earn at least Rs. 3,000,000 per year</li>
+                            {eligibilityList2.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -129,13 +157,13 @@ function Info() {
                         <h2 className='text-4xl font-bold mb-6'>Required Documentation</h2>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Identity Proof (Aadhaar/PAN/Passport)</li>
-                            <li>Address Proof</li>
-                            <li>KYC documents (Valid Photo ID Proofs)</li>
-                            <li>Last 2 years' ITR as proof of income</li>
-                            <li>Salary Slip (latest 3 months)</li>
-                            <li>Salary account statement(latest 6 months)</li>
-                            <li>Signature Verification Proof</li>
+                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof",
+                                "KYC documents (Valid Photo ID Proofs)", "Last 2 years' ITR as proof of income",
+                                "Salary Slip (latest 3 months)", "Salary account statement(latest 6 months)",
+                                "Signature Verification Proof"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />
@@ -155,26 +183,12 @@ function Info() {
                             </thead>
 
                             <tbody>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Processing Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>1.5% to 4% of Loan Amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Cancellation</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Usually around Rs 5,000</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Stamp Duty Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As Per Actuals</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Legal Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As per actuals</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Penal Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Usually @ 2% per month; 24% p.a.</td>
-                                </tr>
+                                {rateRows.map((row, idx) => (
+                                    <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 

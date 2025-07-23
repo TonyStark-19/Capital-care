@@ -40,6 +40,39 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "Instant Loan Disbursal",
+            description: "Receive funds quickly by pledging your gold assets."
+        },
+        {
+            title: "Lower Interest Rates",
+            description: "Benefit from competitive interest rates due to secured nature."
+        },
+        {
+            title: "Retain Ownership",
+            description: "Get your gold back upon full repayment of the loan."
+        }
+    ];
+
+    // rates
+    const rateRows = [
+        { label: "Loan Processing Fees", value: "0.2% to 0.6% of loan amount" },
+        { label: "Loan Cancellation", value: "1%" },
+        { label: "Stamp Duty Charges", value: "As Per Actuals" },
+        { label: "Legal Fees", value: "Nil" },
+        { label: "Penal Charges", value: "Nil" }
+    ];
+
+    // eligibility list
+    const eligibilityList = [
+        "Age: Typically, borrowers should be 18 years or older.",
+        "Ownership: You must own the gold being pledged.",
+        "Gold Quality: The gold should meet the lender's purity standards.",
+        "Identification: Valid government-issued ID for identity verification."
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -73,18 +106,11 @@ function Info() {
                         <h3 className='text-2xl font-semibold mb-4 text-blue-800'>Key Benefits and Uses:</h3>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Instant Loan Disbursal: </span>Receive funds
-                                quickly by pledging your gold assets.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Lower Interest Rates: </span>Benefit from
-                                competitive interest rates due to secured nature.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Retain Ownership: </span>Get your gold back upon
-                                full repayment of the loan.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -96,15 +122,14 @@ function Info() {
                     <>
                         <h2 className='text-4xl font-bold mb-6'>Eligibility Criteria</h2>
 
-                        <p className='text-[18px] text-gray-800 mb-4'>To qualify for a Gold loan with Capital Care Finance
+                        <p className='text-[18px] leading-relaxed text-gray-800 mb-4'>To qualify for a Gold loan with Capital Care Finance
                             Company, you must meet the following criteria:
                         </p>
 
                         <ul className='list-disc pl-6 text-[18px] text-gray-800 space-y-2 mb-6'>
-                            <li>Age: Typically, borrowers should be 18 years or older.</li>
-                            <li>Ownership: You must own the gold being pledged.</li>
-                            <li>Gold Quality: The gold should meet the lender's purity standards.</li>
-                            <li>Identification: Valid government-issued ID for identity verification.</li>
+                            {eligibilityList.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -116,13 +141,12 @@ function Info() {
                         <h2 className='text-4xl font-bold mb-6'>Required Documentation</h2>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Identity Proof (Aadhaar/PAN/Passport)</li>
-                            <li>Address Proof</li>
-                            <li>Driving License</li>
-                            <li>Rent Agreement</li>
-                            <li>Bank Statement</li>
-                            <li>Two post-dated cheques for security purposes</li>
-                            <li>Passport-size photographs</li>
+                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof",
+                                "Driving License", "Rent Agreement",
+                                "Two post-dated cheques for security purposes", "Passport-size photographs"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />
@@ -142,26 +166,12 @@ function Info() {
                             </thead>
 
                             <tbody>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Processing Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>0.2% to 0.6% of loan amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Cancellation</td>
-                                    <td className='text-[18px] py-2.5 px-4'>1%</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Stamp Duty Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As Per Actuals</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Legal Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nil</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Penal Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nil</td>
-                                </tr>
+                                {rateRows.map((row, idx) => (
+                                    <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 

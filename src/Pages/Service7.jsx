@@ -39,6 +39,30 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "Easy Transactions",
+            description: "Make cashless payments instantly, both online and offline."
+        },
+        {
+            title: "Rewards & Cashback",
+            description: "Earn points, discounts, and cashback on spending."
+        },
+        {
+            title: "Build Credit History",
+            description: "Responsible usage helps improve your credit score."
+        }
+    ];
+
+    // eligibility list
+    const eligibilityList = [
+        "Age : Most credit card issuers require applicants to be a certain age, typically 18 or older. Some may have a higher age requirement.",
+        "Income : Credit card issuers often have a minimum income requirement to ensure that applicants have the means to repay the credit card debt.",
+        "Credit Score : A good credit score is important for credit card eligibility. A higher credit score indicates a history of responsible credit behavior and makes you more likely to be approved for a credit card with favorable terms.",
+        "Residential Status : Depending on the issuer, you might need to provide proof of your current address or residency."
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -72,18 +96,11 @@ function Info() {
                         <h3 className='text-2xl font-semibold mb-4 text-blue-800'>Key Benefits and Uses:</h3>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Easy Transactions: </span>Make cashless payments
-                                instantly, both online and offline.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Rewards & Cashback: </span>Earn points, discounts,
-                                and cashback on spending.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Build Credit History: </span>Responsible usage
-                                helps improve your credit score.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -101,15 +118,9 @@ function Info() {
                         </p>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Age : Most credit card issuers require applicants to be a certain age, typically 18 or older.
-                                Some may have a higher age requirement.</li>
-                            <li>Income : Credit card issuers often have a minimum income requirement to ensure that applicants
-                                have the means to repay the credit card debt.</li>
-                            <li>Credit Score : A good credit score is important for credit card eligibility. A higher credit
-                                score indicates a history of responsible credit behavior and makes you more likely to be approved
-                                for a credit card with favorable terms.</li>
-                            <li>Residential Status : Depending on the issuer, you might need to provide proof of your current
-                                address or residency.</li>
+                            {eligibilityList.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -121,10 +132,11 @@ function Info() {
                         <h2 className='text-4xl font-bold mb-6'>Required Documentation</h2>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Identity Proof (Aadhaar/PAN/Passport)</li>
-                            <li>Address Proof</li>
-                            <li>KYC documents (Valid Photo ID Proofs)</li>
-                            <li>Last 2 years' ITR as proof of income</li>
+                            {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof",
+                                "KYC documents (Valid Photo ID Proofs)", "Last 2 years' ITR as proof of income"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />

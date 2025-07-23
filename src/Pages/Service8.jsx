@@ -40,6 +40,51 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "High Loan Amounts",
+            description: "Get substantial funding based on the market value of your owned property."
+        },
+        {
+            title: "Lower Interest Rates",
+            description: "Enjoy competitive rates due to the secured nature of the loan."
+        },
+        {
+            title: "Flexible Usage",
+            description: "Use the funds for business expansion, education, weddings, medical emergencies, or debt consolidation."
+        },
+        {
+            title: "Retain Ownership",
+            description: "Continue using your property while accessing funds, as ownership remains with you during the loan term."
+        },
+        {
+            title: "Longer Repayment Tenure",
+            description: "Benefit from extended tenures, reducing your monthly EMI burden."
+        }
+    ];
+
+    // eligibility list
+    const eligibilityList = [
+        "Nationality: You need to be a Citizen of India with documents to prove your claim.",
+        "Occupation and Income: Your lender will require you to furnish details regarding your occupation and income to prove your professional and financial stability to determine your creditworthiness.",
+        "Credit History: Your three-digit Credit Score, indicative of your track record in respect of repayment of loans, and other forms of credit will be a deciding factor to prove your eligibility for a LAP.",
+        "Banking Relationship: Should you have a healthy relationship with your lender, you will not be disapproved for a LAP. Additionally, your lender will offer you better terms and conditions in respect of loan value, interest rates, period of the loan, hidden charges, and processing fees.",
+        "Market Value of Property: Your lender retains the right to decide the loan amount and terms and conditions of your mortgage loan based on the market value of your collateral property. Besides, the market value of the mortgaged property must be higher than the loan amount calculated on the current value of your property.",
+        "Title of Property: Your lender will require you to be the current existent owner of the property, and in case of a co-application, you will require to prove multiple ownership clear title. Besides, the property must not be mortgaged with any other financial institution."
+    ];
+
+    // rates
+    const rateRows = [
+        { label: "Loan Processing Fees", value: "0.25% to 2% of Loan Amount" },
+        { label: "Loan Cancellation", value: "Nill - 5% (according to Bank/NBFC)" },
+        { label: "Stamp Duty Charges", value: "As per the Value of the Property and State Tax" },
+        { label: "Legal Fees", value: "As per actual" },
+        { label: "Penal Charges", value: "Usually 2% per month" },
+        { label: "EMI / Cheque Bounce Charges", value: "Approx 500/-" },
+        { label: "Foreclosure", value: "Nill to 4% (According to bank /NBFC)" }
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -74,26 +119,11 @@ function Info() {
                         <h3 className='text-2xl font-semibold mb-4 text-blue-800'>Key Benefits and Uses:</h3>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>High Loan Amounts: </span>Get substantial funding
-                                based on the market value of your owned property.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Lower Interest Rates: </span>Enjoy competitive
-                                rates due to the secured nature of the loan.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Flexible Usage: </span>Use the funds for business
-                                expansion, education, weddings, medical emergencies, or debt consolidation.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Retain Ownership: </span>Continue using your
-                                property while accessing funds, as ownership remains with you during the loan term.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Longer Repayment Tenure: </span>Benefit from
-                                extended tenures, reducing your monthly EMI burden.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -110,24 +140,9 @@ function Info() {
                         </p>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Nationality: You need to be a Citizen of India with documents to prove your claim.</li>
-                            <li>Occupation and Income: Your lender will require you to furnish details regarding your occupation
-                                and income to prove your professional and financial stability to determine your creditworthiness.
-                            </li>
-                            <li>Credit History: Your three-digit Credit Score, indicative of your track record in respect of
-                                repayment of loans, and other forms of credit will be a deciding factor to prove your eligibility
-                                for a LAP.</li>
-                            <li>Banking Relationship: Should you have a healthy relationship with your lender, you will not be
-                                disapproved for a LAP. Additionally, your lender will offer you better terms and conditions in
-                                respect of loan value, interest rates, period of the loan, hidden charges, and processing fees.
-                            </li>
-                            <li>Market Value of Property: Your lender retains the right to decide the loan amount and terms and
-                                conditions of your mortgage loan based on the market value of your collateral property. Besides,
-                                the market value of the mortgaged property must be higher than the loan amount calculated on the
-                                current value of your property.</li>
-                            <li>Title of Property: Your lender will require you to be the current existent owner of the property,
-                                and in case of a co-application, you will require to prove multiple ownership clear title. Besides,
-                                the property must not be mortgaged with any other financial institution.</li>
+                            {eligibilityList.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -139,11 +154,11 @@ function Info() {
                         <h2 className='text-4xl font-bold mb-6'>Required Documentation</h2>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Proof of identity/residence</li>
-                            <li>Proof of income</li>
-                            <li>Property-related documents</li>
-                            <li>Proof of Business (for self-employed)</li>
-                            <li>Account statement for the last 6 months</li>
+                            {["Proof of identity/residence", "Proof of income", "Property-related documents",
+                                "Proof of Business (for self-employed)", "Account statement for the last 6 months"]
+                                .map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
                         </ul>
 
                         <Button />
@@ -163,34 +178,12 @@ function Info() {
                             </thead>
 
                             <tbody>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Processing Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>0.25% to 2% of Loan Amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Cancellation</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nill - 5% (according to Bank/NBFC)</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Stamp Duty Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As per the Value of the Property and State Tax</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Legal Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>As per actual</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Penal Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Usually 2% per month</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>EMI / Cheque Bounce Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Approx 500/-</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Foreclosure</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nill to 4% (According to bank /NBFC)</td>
-                                </tr>
+                                {rateRows.map((row, idx) => (
+                                    <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 

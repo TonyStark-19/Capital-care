@@ -40,6 +40,54 @@ function Info() {
         { id: "faqs", label: "FAQs" },
     ];
 
+    // loan types
+    const loanOptions = [
+        {
+            title: "Expand or Upgrade Operations",
+            description: "Finance new branches, equipment upgrades, or business infrastructure."
+        },
+        {
+            title: "Boost Working Capital",
+            description: "Maintain healthy cash flow to cover day-to-day operational expenses."
+        },
+        {
+            title: "Seize Opportunities:",
+            description: "Quickly respond to market demand, bulk orders, or business growth prospects tailored to overseas applicants."
+        }
+    ];
+
+    // eligibility list
+    const eligibilityList = [
+        "Business Type: Most lenders provide loans to various types of businesses, including sole proprietorships, partnerships, limited liability companies (LLCs), corporations, and more.",
+        "Credit Score: A good credit score is often required to qualify for a business loan. Lenders use your credit history to assess your ability to repay the loan.",
+        "Annual Revenue: Lenders may have a minimum annual revenue requirement to ensure your business has a stable income.",
+        "Cash Flow: Lenders often evaluate your business's cash flow to determine your ability to repay the loan.",
+        "Eligible Entities: Individuals, MSMEs, Sole Proprietorships, Partnership Firms, Public and Private Limited Companies, Limited Liability Partnerships, retailers, traders, manufacturers, and other non-farm income-generating business entities engaged only in the services, trading, and manufacturing sectors."
+    ];
+
+    // documentation
+    const documentationLists = [
+        "Identity Proof (Aadhaar/PAN/Passport)",
+        "Address Proof",
+        "ITR for the past 2-3 years",
+        "Current Bank Account Statement for the last 12 months",
+        "Last Financial Year's provisional Financials and future year's projections.",
+        "Company's business profile on the letterhead",
+        "GST registration certificate and GST returns of latest 2 years.",
+        "Company PAN Card, Certificate of Incorporation, MOA, AOA, List of Directors, and Shareholding pattern for Pvt Ltd companies",
+        "Rent agreement copy of factory and residence (if property is rented)"
+    ];
+
+    // rates
+    const rateRows = [
+        { label: "Loan Processing Fees", value: "1.5% to 5% of Loan Amount" },
+        { label: "Loan Cancellation", value: "Usually 0 to 5% of Loan Amount" },
+        { label: "Stamp Duty Charges", value: "60/- to 600/-" },
+        { label: "Legal Fees", value: "Nil" },
+        { label: "Penal Charges", value: "Nil" },
+        { label: "EMI / Cheque Bounce Charges", value: "Approx 499/- to 599/-" }
+    ];
+
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
@@ -73,18 +121,11 @@ function Info() {
                         <h3 className='text-2xl font-semibold mb-4 text-blue-800'>Key Benefits and Uses:</h3>
 
                         <div className='mb-4'>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Expand or Upgrade Operations: </span>Finance new
-                                branches, equipment upgrades, or business infrastructure.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Boost Working Capital: </span>Maintain healthy
-                                cash flow to cover day-to-day operational expenses.
-                            </p>
-                            <p className='text-[18px] text-gray-800 mb-2'>
-                                <span className='font-semibold text-blue-700'>Seize Opportunities: </span>Quickly respond to
-                                market demand, bulk orders, or business growth prospects tailored to overseas applicants.
-                            </p>
+                            {loanOptions.map((item, idx) => (
+                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                    <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
+                                </p>
+                            ))}
                         </div>
 
                         <Item />
@@ -96,23 +137,14 @@ function Info() {
                     <>
                         <h2 className='text-4xl font-bold mb-6'>Eligibility Criteria</h2>
 
-                        <p className='text-[18px] text-gray-800 mb-4'>To qualify for a Business loan with Capital Care Finance
+                        <p className='text-[18px] leading-relaxed text-gray-800 mb-4'>To qualify for a Business loan with Capital Care Finance
                             Company, you must meet the following criteria:
                         </p>
 
                         <ul className='list-disc pl-6 text-[18px] text-gray-800 space-y-2 mb-6'>
-                            <li>Business Type: Most lenders provide loans to various types of businesses, including sole
-                                proprietorships, partnerships, limited liability companies (LLCs), corporations, and more.</li>
-                            <li>Credit Score: A good credit score is often required to qualify for a business loan. Lenders
-                                use your credit history to assess your ability to repay the loan.</li>
-                            <li>Annual Revenue: Lenders may have a minimum annual revenue requirement to ensure your business has
-                                a stable income.</li>
-                            <li>Cash Flow: Lenders often evaluate your business's cash flow to determine your ability to repay
-                                the loan.</li>
-                            <li>Eligible Entities: Individuals, MSMEs, Sole Proprietorships, Partnership Firms, Public and Private
-                                Limited Companies, Limited Liability Partnerships, retailers, traders, manufacturers, and other
-                                non-farm income-generating business entities engaged only in the services, trading, and
-                                manufacturing sectors</li>
+                            {eligibilityList.map(item => (
+                                <li className="leading-relaxed" key={item}>{item}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -123,22 +155,15 @@ function Info() {
                     <>
                         <h2 className='text-4xl font-bold mb-6'>Required Documentation</h2>
 
-                        <p className='text-[18px] text-gray-800 mb-4'>The list of documents required for a business loan to be
+                        <p className='text-[18px] leading-relaxed text-gray-800 mb-4'>The list of documents required for a business loan to be
                             submitted varies based on type of business entity. Submit the following documents to begin with the
                             loan process:
                         </p>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
-                            <li>Identity Proof (Aadhaar/PAN/Passport)</li>
-                            <li>Address Proof</li>
-                            <li>ITR for the past 2-3 years</li>
-                            <li>Current Bank Account Statement for the last 12 months</li>
-                            <li>Last Financial Year's provisional Financials and future year's projections.</li>
-                            <li>Company's business profile on the letterhead</li>
-                            <li>GST registration certificate and GST returns of latest 2 years.</li>
-                            <li>Company PAN Card, Certificate of Incorporation, MOA, AOA, List of Directors, and Shareholding
-                                pattern for Pvt Ltd companies</li>
-                            <li>Rent agreement copy of factory and residence (if property is rented)</li>
+                            {documentationLists.map((documentationList, idx) => (
+                                <li key={idx} className="leading-relaxed">{documentationList}</li>
+                            ))}
                         </ul>
 
                         <Button />
@@ -158,30 +183,12 @@ function Info() {
                             </thead>
 
                             <tbody>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Processing Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>1.5% to 5% of Loan Amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Loan Cancellation</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Usually 0 to 5% of Loan Amount</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Stamp Duty Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>60/- to 600/-</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Legal Fees</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nil</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>Penal Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Nil</td>
-                                </tr>
-                                <tr className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                    <td className='text-[18px] py-2.5 px-4'>EMI / Cheque Bounce Charges</td>
-                                    <td className='text-[18px] py-2.5 px-4'>Approx 499/- to 599/-</td>
-                                </tr>
+                                {rateRows.map((row, idx) => (
+                                    <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 
