@@ -17,7 +17,9 @@ export function ServiceNine() {
             <Header />
             <About />
             <Types />
+            <Buy />
             <Terms />
+            <Apply />
             <Faq />
             <Footer />
         </>
@@ -103,9 +105,37 @@ function Types() {
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-8 w-[25%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                    <div key={idx} className="p-8 w-[25%] rounded-lg shadow-lg hover:shadow-2xl duration-400">
                         <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
                         <p className="text-[16px] text-gray-700">{box.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}
+
+// who should buy
+function Buy() {
+    // boxes
+    const boxes = [
+        "Individuals with financial dependents, such as spouses, children, or aging parents.",
+        "Breadwinners who contribute significantly to the household income.",
+        "Anyone with outstanding debts, such as mortgages, loans, or credit card balances.",
+        "Parents who want to ensure their children's education and future financial security.",
+        "Business owners looking to protect their businesses and provide for their families in case of their demise.",
+        "Individuals with specific financial goals, such as leaving an inheritance or legacy.",
+        "Those who want to ensure their funeral and final expenses are covered without burdening their family.",
+        "People seeking to build cash value or investment opportunities through certain life insurance policies, like whole life or universal life."
+    ];
+    return (
+        <div className="p-12">
+            <h1 className="text-black text-4xl font-bold text-center mb-12">Who Should Buy a Life Insurance Policy?</h1>
+
+            <div className="flex flex-row flex-wrap justify-center w-full gap-8">
+                {boxes.map((box, idx) => (
+                    <div key={idx} className="p-5 w-[20%] rounded-lg bg-blue-100">
+                        <p className="text-[16px] text-gray-700">{box}</p>
                     </div>
                 ))}
             </div>
@@ -135,7 +165,7 @@ function Terms() {
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
                 {boxes.map((box, idx) => (
-                    <div className="p-5 w-[18%] rounded-lg bg-blue-100">
+                    <div className="p-5 w-[20%] rounded-lg bg-blue-100">
                         <h3 className="text-blue-400 text-xl font-semibold mb-2">{box.name}</h3>
                         <p className="text-[16px] text-gray-700">{box.description}</p>
                     </div>
@@ -243,4 +273,20 @@ function FAQItem({ question, answer, isOpen, onClick }) {
             )}
         </div>
     );
+}
+
+// apply
+function Apply() {
+    return (
+        <div className="p-12">
+            <h1 className="text-black text-4xl font-bold text-center mb-4">Ready to Protect Your Family's Future?</h1>
+
+            <div className="flex flex-col justify-center items-center">
+                <p className="text-[20px] text-gray-700 mb-4">Get the right life insurance coverage tailored to your needs. Our
+                    experts are ready to help you find the perfect policy.</p>
+                <button className="py-2 px-6 bg-red-600 text-white text-[18px] font-semibold rounded-2xl
+                cursor-pointer">Apply Now</button>
+            </div>
+        </div>
+    )
 }
