@@ -1,9 +1,5 @@
 // import components
-import { Navbar } from "./Service1";
-import { Footer } from "./Service1";
-import { Header } from "./Service1";
-import { Button } from "./Service1";
-import { Item } from "./Service1";
+import { Navbar, Footer, Header, Button, Item } from "./Service1";
 
 // import use state
 import { useState } from "react";

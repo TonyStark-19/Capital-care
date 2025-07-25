@@ -1,7 +1,5 @@
 // import components
-import { Navbar } from "./Service1";
-import { Footer } from "./Service1";
-import { Header } from "./Service1";
+import { Navbar, Footer, Header } from "./Service1";
 
 // import use state
 import { useState } from "react";
@@ -29,11 +27,11 @@ export function ServiceNine() {
 // about
 function About() {
     return (
-        <div className="p-12">
+        <div className="p-12 flex flex-col justify-center items-center">
             <h1 className="text-black text-4xl font-bold text-center mb-12">What is Life Insurance?</h1>
 
-            <div className="flex flex-col justify-center items-center gap-5">
-                <p className="text-[18px] text-gray-700 text-center w-[80%]">Life insurance is a financial contract or
+            <div className="flex flex-col justify-center items-center gap-5 shadow-2xl px-4 py-6 rounded-2xl w-[80%]">
+                <p className="text-[16px] text-gray-700 text-center w-[90%]">Life insurance is a financial contract or
                     arrangement between an individual (the policyholder) and an insurance company. In this arrangement, the
                     policyholder pays regular premiums to the insurance company, and in return, the insurance company provides a
                     death benefit to the policyholder's designated beneficiaries upon the policyholder's death. Life insurance is
@@ -41,13 +39,13 @@ function About() {
                     the event of their passing.
                 </p>
 
-                <p className="text-[18px] text-gray-700 text-center w-[80%]">Life insurance is a kind of life insurance that
+                <p className="text-[16px] text-gray-700 text-center w-[90%]">Life insurance is a kind of life insurance that
                     offers protection for a predetermined number of months or years, or a term. In the tragic event that the
                     insured passes away during the policy term, this sort of life insurance offers a financial benefit to the
                     nominee. Low-cost term insurance products offer excellent life coverage.
                 </p>
 
-                <p className="text-[18px] text-gray-700 text-center w-[80%]">For example: The cost of a $1 billion term
+                <p className="text-[16px] text-gray-700 text-center w-[90%]">For example: The cost of a $1 billion term
                     insurance policy might be as low as $485* every month. These set premiums may be paid all at once,
                     periodically, for the duration of the policy, or only temporarily. Depending on the type of premium
                     payment method selected by the buyer, the premium amount varies.
@@ -107,7 +105,7 @@ function Types() {
                 {boxes.map((box, idx) => (
                     <div key={idx} className="p-8 w-[25%] rounded-lg shadow-lg hover:shadow-2xl duration-400">
                         <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
-                        <p className="text-[16px] text-gray-700">{box.description}</p>
+                        <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
                 ))}
             </div>
@@ -135,7 +133,7 @@ function Buy() {
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
                 {boxes.map((box, idx) => (
                     <div key={idx} className="p-5 w-[20%] rounded-lg bg-blue-100">
-                        <p className="text-[16px] text-gray-700">{box}</p>
+                        <p className="text-[16px] tracking-wide text-gray-700">{box}</p>
                     </div>
                 ))}
             </div>
@@ -167,9 +165,26 @@ function Terms() {
                 {boxes.map((box, idx) => (
                     <div className="p-5 w-[20%] rounded-lg bg-blue-100">
                         <h3 className="text-blue-400 text-xl font-semibold mb-2">{box.name}</h3>
-                        <p className="text-[16px] text-gray-700">{box.description}</p>
+                        <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
                 ))}
+            </div>
+        </div>
+    )
+}
+
+
+// apply
+function Apply() {
+    return (
+        <div className="p-12">
+            <h1 className="text-black text-4xl font-bold text-center mb-5">Ready to Protect Your Family's Future?</h1>
+
+            <div className="flex flex-col justify-center items-center">
+                <p className="text-[20px] text-gray-700 mb-5">Get the right life insurance coverage tailored to your needs. Our
+                    experts are ready to help you find the perfect policy.</p>
+                <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px] font-semibold
+                 rounded-2xl cursor-pointer">Apply Now</button>
             </div>
         </div>
     )
@@ -250,12 +265,12 @@ function FAQItem({ question, answer, isOpen, onClick }) {
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
                 cursor-pointer"
             >
-                <h3 className="text-[17px] font-semibold text-gray-800">{question}</h3>
+                <h3 className="text-[17px] font-semibold text-gray-700">{question}</h3>
                 <span>
                     {isOpen ? (
-                        <FaChevronUp className="text-blue-600" />
+                        <FaChevronUp className="text-gray-700" />
                     ) : (
-                        <FaChevronDown className="text-blue-600" />
+                        <FaChevronDown className="text-gray-700" />
                     )}
                 </span>
             </button>
@@ -273,20 +288,4 @@ function FAQItem({ question, answer, isOpen, onClick }) {
             )}
         </div>
     );
-}
-
-// apply
-function Apply() {
-    return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-4">Ready to Protect Your Family's Future?</h1>
-
-            <div className="flex flex-col justify-center items-center">
-                <p className="text-[20px] text-gray-700 mb-4">Get the right life insurance coverage tailored to your needs. Our
-                    experts are ready to help you find the perfect policy.</p>
-                <button className="py-2 px-6 bg-red-600 text-white text-[18px] font-semibold rounded-2xl
-                cursor-pointer">Apply Now</button>
-            </div>
-        </div>
-    )
 }
