@@ -1,5 +1,6 @@
 // import components
 import { Navbar, Footer, Header, Button, Item } from "./Service1";
+import { IoIosArrowForward } from "react-icons/io";
 
 // import use state
 import { useState } from "react";
@@ -104,13 +105,18 @@ function Info() {
                     <div
                         key={tab.id}
                         onClick={() => setSelectedSection(tab.id)}
-                        className={`p-4 text-[17px] cursor-pointer rounded-r-xl duration-200
+                        className={`p-4 text-[17px] cursor-pointer rounded-r-xl duration-200 flex flex-row justify-between
+                                    items-center group text-blue-800
                             ${selectedSection === tab.id
-                                ? "bg-gray-300"
-                                : "hover:bg-gray-300"
+                                ? "bg-blue-200/70"
+                                : "hover:bg-blue-200/70"
                             }`}
                     >
                         {tab.label}
+                        <IoIosArrowForward
+                            className={`transition-colors
+                            ${selectedSection === tab.id ? "text-blue-800" : "text-white group-hover:text-blue-800"}`}
+                        />
                     </div>
                 ))}
             </div>

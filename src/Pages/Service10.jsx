@@ -30,8 +30,8 @@ function About() {
         <div className="p-12 flex flex-col justify-center items-center">
             <h1 className="text-black text-4xl font-bold text-center mb-12">What is Health Insurance?</h1>
 
-            <div className="flex flex-col justify-center items-center gap-5 shadow-2xl px-4 py-6 rounded-2xl w-[80%]">
-                <p className="text-[16px] text-gray-700 text-center w-[90%]">Health insurance is a type of coverage that helps
+            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg w-[80%]">
+                <p className="text-[17px] text-gray-700 text-center w-[90%]">Health insurance is a type of coverage that helps
                     you manage the cost of medical expenses and healthcare services. When you have health insurance, the
                     insurance company pays a part or the entire amount of your medical bills, depending on the terms of the
                     policy. This financial protection ensures that you can access necessary medical treatments without

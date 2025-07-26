@@ -1,5 +1,6 @@
 // react icons
 import { FaFacebook, FaInstagram, FaLinkedin, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 
 // import link
 import { Link } from 'react-router-dom';
@@ -78,10 +79,12 @@ export function Header() {
 // button component
 export function Button() {
     return (
-        <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:scale-105 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
+            <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:scale-105 
         transition-transform rounded-sm text-[16px] uppercase font-bold tracking-wide cursor-pointer">
-            Apply
-        </button>
+                Apply
+            </button>
+        </a>
     );
 }
 
@@ -150,18 +153,23 @@ function Info() {
     return (
         <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
             {/* Sidebar Tabs */}
-            <div className='w-60 py-5 pr-5 bg-gray-100 flex flex-col gap-2.5'>
+            <div className='w-70 py-5 pr-5 bg-gray-100 flex flex-col gap-2.5'>
                 {tabs.map(tab => (
                     <div
                         key={tab.id}
                         onClick={() => setSelectedSection(tab.id)}
-                        className={`p-4 text-[17px] cursor-pointer rounded-r-xl duration-200
+                        className={`p-4 text-[17px] cursor-pointer rounded-r-xl duration-200 flex flex-row justify-between
+                            items-center group text-blue-800
                             ${selectedSection === tab.id
-                                ? "bg-gray-300"
-                                : "hover:bg-gray-300"
+                                ? "bg-blue-200/70"
+                                : "hover:bg-blue-200/70"
                             }`}
                     >
                         {tab.label}
+                        <IoIosArrowForward
+                            className={`transition-colors
+                            ${selectedSection === tab.id ? "text-blue-800" : "text-white group-hover:text-blue-800"}`}
+                        />
                     </div>
                 ))}
             </div>
@@ -170,8 +178,8 @@ function Info() {
             <div className='w-full p-8'>
                 {selectedSection === "features" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-4 text-blue-800 relative after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-2 after:mb-3 after:rounded-full">About Home Loan</h2>
+                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">About Home Loan</h2>
 
                         <p className='text-[18px] leading-relaxed mb-4 text-gray-700'>
                             Tailored Housing Finance Solutions to Build, Expand, or Upgrade Your Dream Home.
@@ -197,8 +205,8 @@ function Info() {
 
                 {selectedSection === "eligibility" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-4 text-blue-800 relative after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Eligibility Criteria</h2>
+                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Eligibility Criteria</h2>
 
                         <p className='text-[18px] text-gray-800 mb-4'>To qualify for a home loan with Capital Care Finance
                             Company, you must meet the following criteria:</p>
@@ -218,10 +226,10 @@ function Info() {
 
                 {selectedSection === "documentation" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-4 text-blue-800 relative after:content-[''] after:block after:w-70
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Required Documentation</h2>
+                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-70
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Required Documentation</h2>
 
-                        <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
+                        <h3 className='text-xl font-bold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px]'>
                             {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof", "Last 3 months' salary slips",
@@ -231,7 +239,7 @@ function Info() {
                                 ))}
                         </ul>
 
-                        <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
+                        <h3 className='text-xl font-bold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
                             {["Business registration documents", "Income Tax Returns for last 2 years",
@@ -247,8 +255,8 @@ function Info() {
 
                 {selectedSection === "rates" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-2 after:mb-3 after:rounded-full">Rates & Fees</h2>
+                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Rates & Fees</h2>
 
                         <table className='w-full border text-left text-gray-700 shadow rounded-md overflow-hidden mb-6'>
                             <thead className='bg-blue-100 text-blue-800'>
@@ -274,8 +282,8 @@ function Info() {
 
                 {selectedSection === "faqs" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-70
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
+                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-70
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
 
                         <div className="flex flex-col gap-4 mb-6">
                             {faqData.map((faq, index) => (
@@ -301,7 +309,7 @@ function Info() {
 export function Item() {
     return (
         <>
-            <h3 className='text-2xl font-semibold mt-6 mb-4 text-blue-800'>Why Choose Capital Care Finance Company?</h3>
+            <h3 className='text-2xl font-bold mt-6 mb-6 text-blue-800'>Why Choose Capital Care Finance Company?</h3>
 
             <div className='flex flex-wrap gap-4 mb-6'>
                 {["Easy Documentation", "Quick Approval", "Higher Loan Amounts", "Flexible Repayment",
@@ -325,12 +333,12 @@ function FAQItem({ question, answer, isOpen, onClick }) {
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
                 cursor-pointer"
             >
-                <h3 className="text-[17px] font-semibold text-gray-800">{question}</h3>
+                <h3 className="text-[17px] font-semibold text-gray-700">{question}</h3>
                 <span>
                     {isOpen ? (
-                        <FaChevronUp className="text-blue-600" />
+                        <FaChevronUp className="text-gray-700" />
                     ) : (
-                        <FaChevronDown className="text-blue-600" />
+                        <FaChevronDown className="text-gray-700" />
                     )}
                 </span>
             </button>

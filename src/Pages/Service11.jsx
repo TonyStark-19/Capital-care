@@ -28,8 +28,8 @@ function About() {
         <div className="p-12 flex flex-col justify-center items-center">
             <h1 className="text-black text-4xl font-bold text-center mb-12">What is General Insurance?</h1>
 
-            <div className="flex flex-col justify-center items-center gap-5 shadow-2xl px-4 py-6 rounded-2xl w-[80%]">
-                <p className="text-[16px] text-gray-700 text-center w-[90%]">General insurance is like a shield for things other
+            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg w-[80%]">
+                <p className="text-[17px] text-gray-700 text-center w-[90%]">General insurance is like a shield for things other
                     than your health or life. It covers your car, home, travel, and more. If something bad happens, like an
                     accident, theft, or damage, the insurance company helps you pay for the repairs or replacements. It's like
                     having a backup plan for unexpected events that could cost you a lot of money.

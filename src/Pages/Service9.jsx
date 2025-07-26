@@ -30,7 +30,7 @@ function About() {
         <div className="p-12 flex flex-col justify-center items-center">
             <h1 className="text-black text-4xl font-bold text-center mb-12">What is Life Insurance?</h1>
 
-            <div className="flex flex-col justify-center items-center gap-5 shadow-2xl px-4 py-6 rounded-2xl w-[80%]">
+            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg w-[80%]">
                 <p className="text-[16px] text-gray-700 text-center w-[90%]">Life insurance is a financial contract or
                     arrangement between an individual (the policyholder) and an insurance company. In this arrangement, the
                     policyholder pays regular premiums to the insurance company, and in return, the insurance company provides a
@@ -183,8 +183,10 @@ function Apply() {
             <div className="flex flex-col justify-center items-center">
                 <p className="text-[20px] text-gray-700 mb-5">Get the right life insurance coverage tailored to your needs. Our
                     experts are ready to help you find the perfect policy.</p>
-                <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px] font-semibold
-                 rounded-2xl cursor-pointer">Apply Now</button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
+                    <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px]
+                     font-semibold rounded-2xl cursor-pointer">Apply Now</button>
+                </a>
             </div>
         </div>
     )
