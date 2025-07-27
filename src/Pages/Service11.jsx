@@ -103,7 +103,7 @@ function Apply() {
                 <p className="text-[20px] text-gray-700 mb-5">Get the right General insurance coverage tailored to your needs.
                     Our experts are ready to help you find the perfect policy.</p>
                 <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px] font-semibold
-                 rounded-2xl cursor-pointer">Apply Now</button>
+                 rounded-2xl cursor-pointer shadow-lg">Apply Now</button>
             </div>
         </div>
     )

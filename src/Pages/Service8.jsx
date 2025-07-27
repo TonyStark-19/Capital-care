@@ -122,11 +122,11 @@ function Info() {
             </div>
 
             {/* Content Section */}
-            <div className='w-full p-8'>
+            <div className='w-full pb-8 px-8 pt-6'>
                 {selectedSection === "features" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-4 relative text-blue-800 after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">About Loan Against Property</h2>
+                        <h2 className="text-[32px] font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">About Loan Against Property</h2>
 
                         <p className='text-[18px] leading-relaxed mb-4 text-gray-700'>
                             A loan against property (LAP) allows you to leverage the value of your residential or commercial
@@ -134,7 +134,7 @@ function Info() {
                             comes with attractive interest rates and higher loan amounts.
                         </p>
 
-                        <h3 className='text-2xl font-semibold mb-4 text-blue-800'>Key Benefits and Uses:</h3>
+                        <h3 className='text-[22px] font-bold my-4 text-blue-800'>Key Benefits and Uses:</h3>
 
                         <div className='mb-4'>
                             {loanOptions.map((item, idx) => (
@@ -151,8 +151,8 @@ function Info() {
 
                 {selectedSection === "eligibility" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-4 relative text-blue-800 after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Eligibility Criteria</h2>
+                        <h2 className="text-[32px] font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Eligibility Criteria</h2>
 
                         <p className='text-[18px] leading-relaxed mb-4 text-gray-700'>
                             To qualify for a loan with Capital Care Finance Company, you must meet the following criteria:
@@ -170,8 +170,8 @@ function Info() {
 
                 {selectedSection === "documentation" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-4 relative text-blue-800 after:content-[''] after:block after:w-70
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Required Documentation</h2>
+                        <h2 className="text-[32px] font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-70
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Required Documentation</h2>
 
                         <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
                             {["Proof of identity/residence", "Proof of income", "Property-related documents",
@@ -187,8 +187,8 @@ function Info() {
 
                 {selectedSection === "rates" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Rates & Fees</h2>
+                        <h2 className="text-[32px] font-bold mb-7 relative text-blue-800 after:content-[''] after:block after:w-50
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Rates & Fees</h2>
 
                         <table className='w-full border text-left text-gray-700 shadow rounded-md overflow-hidden mb-6'>
                             <thead className='bg-blue-100 text-blue-800'>
@@ -214,8 +214,8 @@ function Info() {
 
                 {selectedSection === "faqs" && (
                     <>
-                        <h2 className="text-4xl font-bold mb-6 relative text-blue-800 after:content-[''] after:block after:w-70
-                        after:h-1 after:bg-blue-800 after:mt-3 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
+                        <h2 className="text-[32px] font-bold mb-7 relative text-blue-800 after:content-[''] after:block after:w-70
+                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
 
                         <div className="flex flex-col gap-4">
                             {faqData.map((faq, index) => (
@@ -239,7 +239,7 @@ function Info() {
     )
 }
 
-// faq item
+// FAQ item
 function FAQItem({ question, answer, isOpen, onClick }) {
     return (
         <div className="rounded-md shadow-md overflow-hidden border border-gray-200">
@@ -248,12 +248,12 @@ function FAQItem({ question, answer, isOpen, onClick }) {
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
                 cursor-pointer"
             >
-                <h3 className="text-[17px] font-semibold text-gray-800">{question}</h3>
+                <h3 className="text-[17px] font-semibold text-gray-700">{question}</h3>
                 <span>
                     {isOpen ? (
-                        <FaChevronUp className="text-blue-600" />
+                        <FaChevronUp className="text-gray-700" />
                     ) : (
-                        <FaChevronDown className="text-blue-600" />
+                        <FaChevronDown className="text-gray-700" />
                     )}
                 </span>
             </button>

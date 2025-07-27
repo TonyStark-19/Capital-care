@@ -132,7 +132,7 @@ function Buy() {
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-5 w-[20%] rounded-lg bg-blue-100">
+                    <div key={idx} className="p-5 w-[20%] rounded-lg bg-blue-100 shadow-lg">
                         <p className="text-[16px] tracking-wide text-gray-700">{box}</p>
                     </div>
                 ))}
@@ -163,7 +163,7 @@ function Terms() {
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
                 {boxes.map((box, idx) => (
-                    <div className="p-5 w-[20%] rounded-lg bg-blue-100">
+                    <div className="p-5 w-[20%] rounded-lg bg-blue-100 shadow-lg" key={idx}>
                         <h3 className="text-blue-400 text-xl font-semibold mb-2">{box.name}</h3>
                         <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
@@ -185,7 +185,7 @@ function Apply() {
                     experts are ready to help you find the perfect policy.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
                     <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px]
-                     font-semibold rounded-2xl cursor-pointer">Apply Now</button>
+                     font-semibold rounded-2xl cursor-pointer shadow-lg">Apply Now</button>
                 </a>
             </div>
         </div>

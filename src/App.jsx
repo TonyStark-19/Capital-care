@@ -21,13 +21,20 @@ import { ServiceNine } from "./Pages/Service9";
 import { ServiceTen } from "./Pages/Service10";
 import { ServiceEleven } from "./Pages/Service11";
 
-// import route
-import { Routes, Route } from 'react-router-dom';
+// import route and use location
+import { Routes, Route, useLocation } from 'react-router-dom';
+
+// import use effect and use ref
+import { useRef, useEffect } from "react";
 
 // Main app
 export default function App() {
+  // use ref for scroll to top
+  const scrollRef = useRef(null);
+
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={
           <>
@@ -55,4 +62,15 @@ export default function App() {
       </Routes>
     </>
   )
+}
+
+// scroll to top function
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 }

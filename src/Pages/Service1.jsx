@@ -35,7 +35,9 @@ export function Navbar() {
         bg-white border-2 border-b-gray-300 top-0 fixed z-40">
             <div className="flex flex-row items-center gap-2 cursor-pointer">
                 <img className="w-12" src="images/logo.png" alt="logo"></img>
-                <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
+                <Link to="/">
+                    <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
+                </Link>
             </div>
 
             <ul className="flex flex-row items-center gap-8 text-[17px]">
@@ -80,7 +82,7 @@ export function Header() {
 export function Button() {
     return (
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
-            <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:scale-105 
+            <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:scale-105 
         transition-transform rounded-sm text-[16px] uppercase font-bold tracking-wide cursor-pointer">
                 Apply
             </button>
@@ -175,7 +177,7 @@ function Info() {
             </div>
 
             {/* Content Section */}
-            <div className='w-full p-8'>
+            <div className='w-full pb-8 px-8 pt-6'>
                 {selectedSection === "features" && (
                     <>
                         <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
@@ -255,7 +257,7 @@ function Info() {
 
                 {selectedSection === "rates" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
+                        <h2 className="text-[32px] font-bold mb-7 text-blue-800 relative after:content-[''] after:block after:w-50
                         after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Rates & Fees</h2>
 
                         <table className='w-full border text-left text-gray-700 shadow rounded-md overflow-hidden mb-6'>
@@ -282,7 +284,7 @@ function Info() {
 
                 {selectedSection === "faqs" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-70
+                        <h2 className="text-[32px] font-bold mb-7 text-blue-800 relative after:content-[''] after:block after:w-70
                         after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
 
                         <div className="flex flex-col gap-4 mb-6">
