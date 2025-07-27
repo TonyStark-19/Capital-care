@@ -95,7 +95,8 @@ export function Services() {
 
     return (
         <div className="py-12 px-4 bg-gray-50" id="services">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Our Services</h1>
+            <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
+            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Our Services</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full gap-8">
                 {boxes.map((box, idx) => (

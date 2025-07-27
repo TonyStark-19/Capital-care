@@ -1,6 +1,7 @@
 // react icons
 import { FaFacebook, FaInstagram, FaLinkedin, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { IoMenu } from "react-icons/io5";
 
 // import link
 import { Link } from 'react-router-dom';
@@ -11,12 +12,12 @@ import { useState } from "react";
 // service 1 : home loan
 export function ServiceOne() {
     return (
-        <>
+        <div className="w-full overflow-x-hidden">
             <Navbar />
             <Header />
             <Info />
             <Footer />
-        </>
+        </div>
     )
 }
 
@@ -31,16 +32,17 @@ export function Navbar() {
     ];
 
     return (
-        <div className="w-full px-30 py-4 flex flex-row justify-between
+        <div className="w-full py-4 flex flex-row justify-between min-a:px-30 max-a:px-10 max-b:px-6 max-f:px-4
         bg-white border-2 border-b-gray-300 top-0 fixed z-40">
-            <div className="flex flex-row items-center gap-2 cursor-pointer">
-                <img className="w-12" src="images/logo.png" alt="logo"></img>
+            <div className="flex flex-row items-center min-f:gap-2 max-f:gap-0 cursor-pointer">
+                <img className="min-f:w-12 max-f:w-11" src="images/logo.png" alt="logo"></img>
                 <Link to="/">
-                    <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
+                    <div className="min-f:text-[18px] max-f:text-[16px] font-semibold">Capital Care Finance Company</div>
                 </Link>
             </div>
 
-            <ul className="flex flex-row items-center gap-8 text-[17px]">
+            <ul className="flex flex-row items-center min-a:text-[17px] max-a:text-[17px] max-b:text-[16px] min-a:gap-8 
+            max-a:gap-8 max-c:gap-6 max-e:hidden">
                 {quickLinks.map((quickLink, idx) => (
                     <li
                         key={idx}>
@@ -53,6 +55,10 @@ export function Navbar() {
                     </li>
                 ))}
             </ul>
+
+            <button className="text-4xl text-black min-e:hidden cursor-pointer">
+                <IoMenu />
+            </button>
         </div>
     )
 }
@@ -60,7 +66,7 @@ export function Navbar() {
 // header image
 export function Header() {
     return (
-        <div className='relative h-120 w-full overflow-hidden'>
+        <div className='relative min-a:h-120 max-a:h-100 w-full overflow-hidden'>
             <img
                 src='images/insurance.jpeg'
                 alt='business'
@@ -68,10 +74,11 @@ export function Header() {
             </img>
 
             <div className="absolute inset-0 bg-black/55 flex flex-col justify-center items-center
-            p-8 text-white rounded-lg">
-                <h2 className="text-[40px] font-bold mb-2 mt-18">The Care of Your Financial Needs</h2>
-                <p className="mb-4 text-[20px]">Your trusted partner in financial solutions, providing seamless services
-                    in loans and insurance.</p>
+            min-f:p-8 max-f:p-5 text-white rounded-lg">
+                <h2 className="text-center font-bold mb-2 mt-18 min-a:text-[40px] max-a:text-[35px] max-c:text-[28px] max-f:text-[23px]">
+                    The Care of Your Financial Needs</h2>
+                <p className="mb-4 text-center min-a:text-[20px] max-a:text-[18px] max-f:text-[16px] max-c:w-[90%]">Your trusted partner in
+                    financial solutions, providing seamless services in loans and insurance.</p>
                 <Button />
             </div>
         </div>
@@ -82,8 +89,9 @@ export function Header() {
 export function Button() {
     return (
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
-            <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:scale-105 
-        transition-transform rounded-sm text-[16px] uppercase font-bold tracking-wide cursor-pointer">
+            <button className="text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:scale-105 transition-transform
+             rounded-sm uppercase font-bold tracking-wide cursor-pointer min-e:text-[16px] max-e:text-[15px]
+             min-e:px-6 min-e:py-2 max-e:px-4.5 max-e:py-1.5">
                 Apply
             </button>
         </a>
@@ -398,8 +406,9 @@ export function Footer() {
     ];
 
     return (
-        <div className="pt-12 pb-8 px-5 bg-blue-950 text-white">
-            <div className="flex flex-row justify-evenly">
+        <div className="pb-8 px-5 bg-blue-950 text-white min-e:pt-12 max-e:pt-8">
+            <div className="min-c:flex min-c:flex-row min-c:justify-evenly max-c:grid max-c:grid-cols-2 max-c:gap-6 
+            max-f:grid-cols-1 max-f:gap-4">
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Capital Care Finance Company</h4>
                     <p>Your trusted partner in financial solutions.</p>

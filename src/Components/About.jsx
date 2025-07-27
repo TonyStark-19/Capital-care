@@ -15,10 +15,11 @@ export function About() {
 
     return (
         <div className="p-12 scroll-mt-36" id="about">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">About Us</h1>
+            <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
+            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">About Us</h1>
 
             <div className="flex flex-row items-center justify-center gap-8 flex-wrap">
-                <div className="p-8 w-[600px] h-[300px] bg-gray-50 rounded-lg hover:shadow-xl transition">
+                <div className="p-8 w-[600px] h-[300px] bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition">
                     <h2 className="text-2xl text-blue-700 font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full">Who We Are?</h2>
                     <p className="text-[16px] tracking-wider text-gray-700">At Capital Care Finance Company, we simplify
@@ -28,7 +29,7 @@ export function About() {
                         processing, minimal paperwork, and quick approvals.</p>
                 </div>
 
-                <div className="p-8 w-[600px] h-[300px] bg-blue-700 rounded-lg hover:shadow-xl transition">
+                <div className="p-8 w-[600px] h-[300px] bg-blue-700 rounded-lg shadow-md hover:shadow-xl transition">
                     <h2 className="text-2xl text-white font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-white after:mt-2 after:mb-3 after:rounded-full">What We Offer</h2>
                     <p className="text-[16px] tracking-wider text-gray-100">At Capital Care Finance Company , we provide a
@@ -37,7 +38,7 @@ export function About() {
                         value, we've got you covered.</p>
                 </div>
 
-                <div className="p-8 w-[600px] h-[250px] bg-blue-700 rounded-lg hover:shadow-xl transition">
+                <div className="p-8 w-[600px] h-[250px] bg-blue-700 rounded-lg shadow-md hover:shadow-xl transition">
                     <h2 className="text-2xl text-white font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-white after:mt-2 after:mb-3 after:rounded-full">Our Mission</h2>
                     <p className="text-[16px] tracking-wider text-gray-100">At Capital Care Finance Company , we are committed
@@ -46,7 +47,7 @@ export function About() {
                         paperwork.</p>
                 </div>
 
-                <div className="p-8 w-[600px] h-[250px] bg-gray-50 rounded-lg hover:shadow-xl transition">
+                <div className="p-8 w-[600px] h-[250px] bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition">
                     <h2 className="text-2xl text-blue-700 font-bold relative after:content-[''] after:block after:w-16
                     after:h-1 after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full">Core Values</h2>
 
@@ -54,7 +55,7 @@ export function About() {
                         {values.map((value, idx) => (
                             <div key={idx}
                                 className="flex flex-row items-center gap-2.5 w-[45%] text-[16px] rounded-lg bg-gray-100
-                                hover:bg-gray-200 duration-200 p-4">
+                                hover:bg-gray-200/80 duration-200 p-4">
                                 {value.icon} {value.name}
                             </div>
                         ))}

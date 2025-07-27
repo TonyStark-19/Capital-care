@@ -42,8 +42,9 @@ export function Footer() {
     ];
 
     return (
-        <div className="pt-12 pb-8 px-5 bg-blue-950 text-white">
-            <div className="flex flex-row justify-evenly">
+        <div className="pb-8 px-5 bg-blue-950 text-white min-e:pt-12 max-e:pt-8">
+            <div className="min-c:flex min-c:flex-row min-c:justify-evenly max-c:grid max-c:grid-cols-2 max-c:gap-6 
+            max-f:grid-cols-1 max-f:gap-4">
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Capital Care Finance Company</h4>
                     <p>Your trusted partner in financial solutions.</p>

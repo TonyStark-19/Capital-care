@@ -40,12 +40,12 @@ export function Home() {
 
     return (
         <div className="w-full" id="home">
-            <button className="custom-prev absolute top-60 left-4 z-10 -translate-y-1/2 bg-blue-700 text-white p-3 
-            rounded-full shadow-md hover:bg-blue-800 cursor-pointer">
+            <button className="custom-prev absolute top-60 left-4 z-10 -translate-y-1/2 bg-blue-700 text-white max-g:hidden
+            min-c:p-3 min-c:text-[16px] max-c:p-2 max-c:text-[14px] rounded-full shadow-md hover:bg-blue-800 cursor-pointer">
                 <FaArrowLeft />
             </button>
-            <button className="custom-next absolute top-60 right-4 z-10 -translate-y-1/2 bg-blue-700 text-white p-3
-            rounded-full shadow-md hover:bg-blue-800 cursor-pointer">
+            <button className="custom-next absolute top-60 right-4 z-10 -translate-y-1/2 bg-blue-700 text-white max-g:hidden
+            min-c:p-3 min-c:text-[16px] max-c:p-2 max-c:text-[14px] rounded-full shadow-md hover:bg-blue-800 cursor-pointer">
                 <FaArrowRight />
             </button>
 
@@ -68,7 +68,7 @@ export function Home() {
             >
                 {slides.map((slide, idx) => (
                     <SwiperSlide key={idx}>
-                        <div className="relative w-full h-[420px]">
+                        <div className="relative w-full min-a:h-[420px] max-a:h-[400px]">
                             <img
                                 src={slide.image}
                                 alt={slide.heading}
@@ -78,8 +78,8 @@ export function Home() {
                             {/* Overlay content */}
                             <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center
                             p-8 text-white rounded-lg">
-                                <h2 className="text-3xl font-bold mb-2 mt-18">{slide.heading}</h2>
-                                <p className="mb-4 text-lg">{slide.text}</p>
+                                <h2 className="font-bold mb-2 mt-18 min-c:text-3xl max-c:text-[26px] max-d:text-[23px]">{slide.heading}</h2>
+                                <p className="text-center mb-4 min-c:text-lg max-c:text-[16px]">{slide.text}</p>
                                 <Link
                                     to="services"
                                     smooth={true}

@@ -37,7 +37,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={
-          <>
+          <div className="w-full overflow-x-hidden">
             <Navbar />
             <Home />
             <About />
@@ -46,7 +46,7 @@ export default function App() {
             <WhyUS />
             <Contact />
             <Footer />
-          </>
+          </div>
         } />
         <Route path="/service1" element={<ServiceOne />} />
         <Route path="/service2" element={<ServiceTwo />} />

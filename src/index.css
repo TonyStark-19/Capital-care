@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+    /* 1250px */
+    --breakpoint-a: 78.125rem;
+    /* 1050 */
+    --breakpoint-b: 65.625rem;
+    /* 850px */
+    --breakpoint-c: 53.125rem;
+    /* 400px */
+    --breakpoint-d: 25rem;
+    /* 750px */
+    --breakpoint-e: 46.875rem;
+    /* 500px */
+    --breakpoint-f: 31.25rem;
+    /* 600px */
+    --breakpoint-g: 37.5rem;
+}
