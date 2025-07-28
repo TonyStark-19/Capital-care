@@ -98,12 +98,12 @@ export function Services() {
             <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
             min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Our Services</h1>
 
-            <div className="flex flex-row flex-wrap justify-center w-full gap-8">
+            <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
                     <Link
                         to={box.link}
                         key={idx}
-                        className="p-8 w-[20%] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                        className="p-8 w-[300px] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
                         <div>
                             {box.icon}
                             <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>

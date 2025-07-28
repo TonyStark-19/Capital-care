@@ -10,7 +10,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 // service 9 : Life Insurance
 export function ServiceNine() {
     return (
-        <>
+        <div className="w-full overflow-x-hidden">
             <Navbar />
             <Header />
             <About />
@@ -20,35 +20,24 @@ export function ServiceNine() {
             <Apply />
             <Faq />
             <Footer />
-        </>
+        </div>
     )
 }
 
 // about
 function About() {
     return (
-        <div className="p-12 flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center min-c:p-12 max-c:p-6">
             <h1 className="text-black text-4xl font-bold text-center mb-12">What is Life Insurance?</h1>
 
-            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg w-[80%]">
-                <p className="text-[16px] text-gray-700 text-center w-[90%]">Life insurance is a financial contract or
-                    arrangement between an individual (the policyholder) and an insurance company. In this arrangement, the
-                    policyholder pays regular premiums to the insurance company, and in return, the insurance company provides a
-                    death benefit to the policyholder's designated beneficiaries upon the policyholder's death. Life insurance is
-                    designed to provide financial protection and support to the policyholder's loved ones or beneficiaries in
-                    the event of their passing.
-                </p>
-
-                <p className="text-[16px] text-gray-700 text-center w-[90%]">Life insurance is a kind of life insurance that
-                    offers protection for a predetermined number of months or years, or a term. In the tragic event that the
-                    insured passes away during the policy term, this sort of life insurance offers a financial benefit to the
-                    nominee. Low-cost term insurance products offer excellent life coverage.
-                </p>
-
-                <p className="text-[16px] text-gray-700 text-center w-[90%]">For example: The cost of a $1 billion term
-                    insurance policy might be as low as $485* every month. These set premiums may be paid all at once,
-                    periodically, for the duration of the policy, or only temporarily. Depending on the type of premium
-                    payment method selected by the buyer, the premium amount varies.
+            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg min-a:w-[80%]
+            max-a:w-full">
+                <p className="text-[16px] text-gray-700 text-center min-a:w-[90%] max-a:w-[98%]">Life insurance is a financial
+                    contract or arrangement between an individual (the policyholder) and an insurance company. In this arrangement,
+                    the policyholder pays regular premiums to the insurance company, and in return, the insurance company
+                    provides a death benefit to the policyholder's designated beneficiaries upon the policyholder's death.
+                    Life insurance is designed to provide financial protection and support to the policyholder's loved ones or
+                    beneficiaries in the event of their passing.
                 </p>
             </div>
         </div>

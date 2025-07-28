@@ -11,12 +11,12 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 // service 8 : Loan Against Property
 export function ServiceEight() {
     return (
-        <>
+        <div className="w-full overflow-x-hidden">
             <Navbar />
             <Header />
             <Info />
             <Footer />
-        </>
+        </div>
     )
 }
 

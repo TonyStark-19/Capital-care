@@ -17,9 +17,10 @@ export function Contact() {
             <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
             min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Contact Us</h1>
 
-            <div className="flex flex-row justify-center">
-                <div className="p-8 min-w-[45%] shadow-xl rounded-l-lg">
-                    <h2 className="text-[32px] mb-6 font-bold">Get in Touch</h2>
+            <div className="flex min-b:flex-row max-b:flex-col justify-center">
+                <div className="shadow-xl min-b:rounded-l-lg max-b:rounded-t-lg min-a:w-[45%] max-a:w-[49%] max-b:w-full
+                min-e:p-8 max-e:p-5">
+                    <h2 className="min-e:text-[32px] max-e:text-[25px] mb-6 font-bold">Get in Touch</h2>
 
                     <form className="flex flex-col">
                         <label htmlFor="full-name" className="mb-2 text-sm font-medium text-gray-600">Full Name</label>
@@ -63,8 +64,9 @@ export function Contact() {
 
                 </div>
 
-                <div className="p-8 min-w-[45%] shadow-xl rounded-r-lg text-white bg-blue-700">
-                    <h2 className="text-[32px] mb-6 font-bold">Contact Information</h2>
+                <div className="shadow-xl min-b:rounded-r-lg max-b:rounded-b-lg text-white bg-blue-700 min-a:w-[45%] 
+                max-a:w-[49%] max-b:w-full min-e:p-8 max-e:p-5">
+                    <h2 className="min-e:text-[32px] max-e:text-[25px] mb-6 font-bold">Contact Information</h2>
 
                     {contactInfo.map((item, index) => (
                         <div key={index} className="mb-4 flex flex-row gap-2.5 items-center text-[16px]">

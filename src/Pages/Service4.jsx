@@ -11,12 +11,12 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 // service 4 : personal Loan
 export function ServiceFour() {
     return (
-        <>
+        <div className="w-full overflow-x-hidden">
             <Navbar />
             <Header />
             <Info />
             <Footer />
-        </>
+        </div>
     )
 }
 

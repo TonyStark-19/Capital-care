@@ -10,7 +10,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 // service 11 : General Insurance
 export function ServiceEleven() {
     return (
-        <>
+        <div className="w-full overflow-x-hidden">
             <Navbar />
             <Header />
             <About />
@@ -18,7 +18,7 @@ export function ServiceEleven() {
             <Apply />
             <Faq />
             <Footer />
-        </>
+        </div>
     )
 }
 
