@@ -1,12 +1,17 @@
+// import use state
+import { useState } from 'react';
+
 // import link
 import { Link } from 'react-scroll';
 
 // react icons
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
 
 // Navbar component
 export function Navbar() {
-    // quick links
+    // usestate for menu toggle
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const quickLinks = [
         { link: "home", name: "Home" },
         { link: "about", name: "About" },
@@ -15,18 +20,18 @@ export function Navbar() {
     ];
 
     return (
-        <div className="w-full py-4 flex flex-row justify-between min-a:px-30 max-a:px-10 max-b:px-6 max-f:px-4
-        bg-white border-2 border-b-gray-300 top-0 fixed z-40">
-            <div className="flex flex-row items-center min-f:gap-2 max-f:gap-0 cursor-pointer">
-                <img className="min-f:w-12 max-f:w-11" src="images/logo.png" alt="logo"></img>
-                <div className="min-f:text-[18px] max-f:text-[16px] font-semibold">Capital Care Finance Company</div>
+        <div className="w-full py-4 flex justify-between items-center px-6 bg-white border-b-2 border-gray-300 fixed top-0
+            z-40">
+            {/* Logo */}
+            <div className="flex items-center gap-2 cursor-pointer">
+                <img className="w-12" src="images/logo.png" alt="logo" />
+                <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
             </div>
 
-            <ul className="flex flex-row items-center min-a:text-[17px] max-a:text-[17px] max-b:text-[16px] min-a:gap-8 
-            max-a:gap-8 max-c:gap-6 max-e:hidden">
+            {/* Desktop Links */}
+            <ul className="hidden md:flex items-center gap-8 text-[17px]">
                 {quickLinks.map((quickLink, idx) => (
-                    <li
-                        key={idx}>
+                    <li key={idx}>
                         <Link
                             to={quickLink.link}
                             smooth={true}
@@ -40,9 +45,35 @@ export function Navbar() {
                 ))}
             </ul>
 
-            <button className="text-4xl text-black min-e:hidden cursor-pointer">
-                <IoMenu />
+            {/* Mobile Menu Icon */}
+            <button
+                className="md:hidden text-3xl text-black"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                {menuOpen ? <IoClose /> : <IoMenu />}
             </button>
+
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className="absolute top-[70px] right-0 w-full bg-white shadow-md z-30 md:hidden">
+                    <ul className="flex flex-col items-start py-5 px-6 space-y-4">
+                        {quickLinks.map((quickLink, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    to={quickLink.link}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-60}
+                                    onClick={() => setMenuOpen(false)} // close menu on click
+                                    className="block font-semibold text-gray-700 hover:text-blue-700"
+                                >
+                                    {quickLink.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
-    )
+    );
 }

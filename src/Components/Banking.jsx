@@ -13,7 +13,7 @@ export function Banking() {
     return (
         <div className="min-a:p-6 max-a:p-6 max-c:p-4">
             <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Our Banking Partners</h1>
+            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]">Our Banking Partners</h1>
 
             <div className="flex justify-center items-center">
                 <div className="flex flex-row flex-wrap items-center justify-center p-3 min-a:gap-15 max-a:gap-10 max-b:gap-8 

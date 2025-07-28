@@ -27,12 +27,13 @@ export function ServiceNine() {
 // about
 function About() {
     return (
-        <div className="flex flex-col justify-center items-center min-c:p-12 max-c:p-6">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">What is Life Insurance?</h1>
+        <div className="flex flex-col justify-center items-center min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-3 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">What is Life Insurance?</h1>
 
             <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg min-a:w-[80%]
-            max-a:w-full">
-                <p className="text-[16px] text-gray-700 text-center min-a:w-[90%] max-a:w-[98%]">Life insurance is a financial
+                max-a:w-full">
+                <p className="text-[16px] text-gray-700 min-a:w-[90%] max-a:w-[98%]">Life insurance is a financial
                     contract or arrangement between an individual (the policyholder) and an insurance company. In this arrangement,
                     the policyholder pays regular premiums to the insurance company, and in return, the insurance company
                     provides a death benefit to the policyholder's designated beneficiaries upon the policyholder's death.
@@ -87,12 +88,14 @@ function Types() {
     ];
 
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Types Of Life Insurance</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Types Of Life Insurance</h1>
 
-            <div className="flex flex-row flex-wrap justify-center w-full gap-8">
+            <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-8 w-[25%] rounded-lg shadow-lg hover:shadow-2xl duration-400">
+                    <div key={idx} className="p-8 min-e:w-[300px] max-e:w-[280px] max-sm:w-full rounded-lg shadow-lg 
+                    hover:shadow-2xl duration-400">
                         <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
                         <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
@@ -116,12 +119,13 @@ function Buy() {
         "People seeking to build cash value or investment opportunities through certain life insurance policies, like whole life or universal life."
     ];
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Who Should Buy a Life Insurance Policy?</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Who Should Buy a Life Insurance Policy?</h1>
 
-            <div className="flex flex-row flex-wrap justify-center w-full gap-8">
+            <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-5 w-[20%] rounded-lg bg-blue-100 shadow-lg">
+                    <div key={idx} className="p-5 min-g:w-[230px] max-g:w-[210px] max-f:w-full rounded-lg bg-blue-100 shadow-lg">
                         <p className="text-[16px] tracking-wide text-gray-700">{box}</p>
                     </div>
                 ))}
@@ -147,12 +151,13 @@ function Terms() {
     ];
 
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Key Terms in Life Insurance</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Key Terms in Life Insurance</h1>
 
-            <div className="flex flex-row flex-wrap justify-center w-full gap-8">
+            <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div className="p-5 w-[20%] rounded-lg bg-blue-100 shadow-lg" key={idx}>
+                    <div className="p-5 min-g:w-[230px] max-g:w-[210px] max-f:w-full rounded-lg bg-blue-100 shadow-lg" key={idx}>
                         <h3 className="text-blue-400 text-xl font-semibold mb-2">{box.name}</h3>
                         <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
@@ -166,15 +171,20 @@ function Terms() {
 // apply
 function Apply() {
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-5">Ready to Protect Your Family's Future?</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-5 max-c:mb-3 min-b:text-4xl max-b:text-3xl max-c:text-[26px] 
+            max-g:text-[23px]">
+                Ready to Protect Your Family's Future?</h1>
 
             <div className="flex flex-col justify-center items-center">
-                <p className="text-[20px] text-gray-700 mb-5">Get the right life insurance coverage tailored to your needs. Our
+                <p className="text-center text-gray-700 mb-5 max-a:w-[800px] max-c:w-[500px] max-g:w-full min-b:text-[20px]
+                max-b:text-[18px] max-c:text-[17px]">Get the right life insurance coverage tailored to your needs. Our
                     experts are ready to help you find the perfect policy.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
-                    <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px]
-                     font-semibold rounded-2xl cursor-pointer shadow-lg">Apply Now</button>
+                    <button className="bg-red-500 hover:bg-red-600 duration-300 text-white font-semibold rounded-2xl
+                    cursor-pointer shadow-lg min-c:py-3 min-c:px-8 max-c:py-2 max-c:px-5 min-c:text-[18px] max-c:text-[17px]">
+                        Apply Now
+                    </button>
                 </a>
             </div>
         </div>
@@ -227,11 +237,12 @@ function Faq() {
     ];
 
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Frequently Asked Questions</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Frequently Asked Questions</h1>
 
             <div className="flex justify-center">
-                <div className="flex flex-col gap-4 mb-6 w-[80%]">
+                <div className="flex flex-col gap-4 mb-6 min-b:w-[80%] max-b:w-full">
                     {faqData.map((faq, index) => (
                         <FAQItem
                             key={index}
@@ -256,12 +267,12 @@ function FAQItem({ question, answer, isOpen, onClick }) {
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
                 cursor-pointer"
             >
-                <h3 className="text-[17px] font-semibold text-gray-700">{question}</h3>
+                <h3 className="min-f:text-[17px] max-f:text-[16px] font-semibold text-gray-700 text-left">{question}</h3>
                 <span>
                     {isOpen ? (
-                        <FaChevronUp className="text-gray-700" />
+                        <FaChevronUp className="text-gray-700 ml-2.5" />
                     ) : (
-                        <FaChevronDown className="text-gray-700" />
+                        <FaChevronDown className="text-gray-700 ml-2.5" />
                     )}
                 </span>
             </button>

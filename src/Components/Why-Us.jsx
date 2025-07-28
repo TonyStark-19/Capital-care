@@ -36,7 +36,7 @@ export function WhyUS() {
         <>
             <div className="min-b:pt-12 min-v:pb-12 max-b:pb-4 max-b:pt-8 max-e:pb-0 px-6">
                 <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-                min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Why Choose Us</h1>
+                min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]">Why Choose Us</h1>
 
                 <div className="flex flex-row flex-wrap justify-center min-a:gap-5 max-a:gap-3 max-c:gap-0">
                     {benifits.map((benifit, idx) => (

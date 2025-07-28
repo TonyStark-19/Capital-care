@@ -15,7 +15,7 @@ export function Contact() {
     return (
         <div className="py-12 px-6" id="contact">
             <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Contact Us</h1>
+            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]">Contact Us</h1>
 
             <div className="flex min-b:flex-row max-b:flex-col justify-center">
                 <div className="shadow-xl min-b:rounded-l-lg max-b:rounded-t-lg min-a:w-[45%] max-a:w-[49%] max-b:w-full

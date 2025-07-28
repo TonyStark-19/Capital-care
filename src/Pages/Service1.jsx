@@ -1,7 +1,7 @@
 // react icons
 import { FaFacebook, FaInstagram, FaLinkedin, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
 
 // import link
 import { Link } from 'react-router-dom';
@@ -23,7 +23,9 @@ export function ServiceOne() {
 
 // Navbar component
 export function Navbar() {
-    // quick links
+    // usestate for menu toggle
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const quickLinks = [
         { name: "Home" },
         { name: "About" },
@@ -32,17 +34,18 @@ export function Navbar() {
     ];
 
     return (
-        <div className="w-full py-4 flex flex-row justify-between min-a:px-30 max-a:px-10 max-b:px-6 max-f:px-4
-        bg-white border-2 border-b-gray-300 top-0 fixed z-40">
-            <div className="flex flex-row items-center min-f:gap-2 max-f:gap-0 cursor-pointer">
-                <img className="min-f:w-12 max-f:w-11" src="images/logo.png" alt="logo"></img>
+        <div className="w-full py-4 flex justify-between items-center px-6 bg-white border-b-2 border-gray-300 fixed top-0
+            z-40">
+            {/* Logo */}
+            <div className="flex items-center gap-2 cursor-pointer">
+                <img className="w-12" src="images/logo.png" alt="logo" />
                 <Link to="/">
                     <div className="min-f:text-[18px] max-f:text-[16px] font-semibold">Capital Care Finance Company</div>
                 </Link>
             </div>
 
-            <ul className="flex flex-row items-center min-a:text-[17px] max-a:text-[17px] max-b:text-[16px] min-a:gap-8 
-            max-a:gap-8 max-c:gap-6 max-e:hidden">
+            {/* Desktop Links */}
+            <ul className="hidden md:flex items-center gap-8 text-[17px]">
                 {quickLinks.map((quickLink, idx) => (
                     <li
                         key={idx}>
@@ -56,11 +59,34 @@ export function Navbar() {
                 ))}
             </ul>
 
-            <button className="text-4xl text-black min-e:hidden cursor-pointer">
-                <IoMenu />
+            {/* Mobile Menu Icon */}
+            <button
+                className="md:hidden text-3xl text-black"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                {menuOpen ? <IoClose /> : <IoMenu />}
             </button>
+
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className="absolute top-[70px] right-0 w-full bg-white shadow-md z-30 md:hidden">
+                    <ul className="flex flex-col items-start py-5 px-6 space-y-4">
+                        {quickLinks.map((quickLink, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    to="/"
+                                    onClick={() => setMenuOpen(false)} // close menu on click
+                                    className="block font-semibold text-gray-700 hover:text-blue-700"
+                                >
+                                    {quickLink.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
-    )
+    );
 }
 
 // header image
@@ -75,10 +101,10 @@ export function Header() {
 
             <div className="absolute inset-0 bg-black/55 flex flex-col justify-center items-center
             min-f:p-8 max-f:p-5 text-white rounded-lg">
-                <h2 className="text-center font-bold mb-2 mt-18 min-a:text-[40px] max-a:text-[35px] max-c:text-[28px] max-f:text-[23px]">
-                    The Care of Your Financial Needs</h2>
-                <p className="mb-4 text-center min-a:text-[20px] max-a:text-[18px] max-f:text-[16px] max-c:w-[90%]">Your trusted partner in
-                    financial solutions, providing seamless services in loans and insurance.</p>
+                <h2 className="text-center font-bold mb-2 mt-18 min-a:text-[40px] max-a:text-[35px] max-c:text-[28px] 
+                max-f:text-[23px]">The Care of Your Financial Needs</h2>
+                <p className="mb-4 text-center min-a:text-[20px] max-a:text-[18px] max-f:text-[16px] max-c:w-[90%]">Your
+                    trusted partner in financial solutions, providing seamless services in loans and insurance.</p>
                 <Button />
             </div>
         </div>
@@ -104,6 +130,8 @@ function Info() {
     const [selectedSection, setSelectedSection] = useState("features");
     // for FAQs
     const [openIndex, setOpenIndex] = useState(null);
+    // menu toggle
+    const [menuOpen, setMenuOpen] = useState(false);
 
     // tabs
     const tabs = [
@@ -161,9 +189,12 @@ function Info() {
     ];
 
     return (
-        <div className='w-[80%] shadow-xl flex flex-row mx-auto'>
+        <div className='min-b:w-[80%] max-b:w-full shadow-xl flex flex-row mx-auto relative'>
             {/* Sidebar Tabs */}
-            <div className='w-70 py-5 pr-5 bg-gray-100 flex flex-col gap-2.5'>
+            <div className={`w-70 py-5 pr-5 bg-gray-100 flex flex-col gap-2.5 z-20 fixed max-lg:top-0 max-lg:left-0 max-lg:h-full
+                transition-transform duration-300 ease-in-out
+                ${menuOpen ? "max-lg:translate-x-0" : "max-lg:-translate-x-full"}
+                lg:relative lg:translate-x-0`}>
                 {tabs.map(tab => (
                     <div
                         key={tab.id}
@@ -184,8 +215,16 @@ function Info() {
                 ))}
             </div>
 
+            {/* Toggle Button for Sidebar (visible only on small screens) */}
+            <button
+                className="lg:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                {menuOpen ? <IoClose /> : <IoMenu />}
+            </button>
+
             {/* Content Section */}
-            <div className='w-full pb-8 px-8 pt-6'>
+            <div className='w-full pb-8 px-8 pt-14'>
                 {selectedSection === "features" && (
                     <>
                         <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50

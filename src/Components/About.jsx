@@ -16,7 +16,7 @@ export function About() {
     return (
         <div className="scroll-mt-36 min-a:p-12 max-a:p-6 max-a:pt-10" id="about">
             <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">About Us</h1>
+            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]">About Us</h1>
 
             <div className="flex flex-row flex-wrap items-center justify-center gap-8">
                 <div className="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px]

@@ -25,14 +25,16 @@ export function ServiceEleven() {
 // about
 function About() {
     return (
-        <div className="p-12 flex flex-col justify-center items-center">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">What is General Insurance?</h1>
+        <div className="flex flex-col justify-center items-center min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-3 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">What is General Insurance?</h1>
 
-            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg w-[80%]">
-                <p className="text-[17px] text-gray-700 text-center w-[90%]">General insurance is like a shield for things other
-                    than your health or life. It covers your car, home, travel, and more. If something bad happens, like an
-                    accident, theft, or damage, the insurance company helps you pay for the repairs or replacements. It's like
-                    having a backup plan for unexpected events that could cost you a lot of money.
+            <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg min-a:w-[80%]
+                max-a:w-full">
+                <p className="text-[16px] text-gray-700 min-a:w-[90%] max-a:w-[98%]">General insurance is like a shield for
+                    things other than your health or life. It covers your car, home, travel, and more. If something bad happens,
+                    like an accident, theft, or damage, the insurance company helps you pay for the repairs or replacements.
+                    It's like having a backup plan for unexpected events that could cost you a lot of money.
                 </p>
             </div>
         </div>
@@ -78,12 +80,14 @@ function Types() {
     ];
 
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Types Of General Insurance</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Types Of General Insurance</h1>
 
-            <div className="flex flex-row flex-wrap justify-center w-full gap-8">
+            <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-8 w-[25%] rounded-lg shadow-lg hover:shadow-2xl duration-400">
+                    <div key={idx} className="p-8 min-e:w-[300px] max-e:w-[280px] max-sm:w-full rounded-lg shadow-lg 
+                    hover:shadow-2xl duration-400">
                         <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
                         <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
@@ -96,14 +100,19 @@ function Types() {
 // apply
 function Apply() {
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-5">Ready to Protect Your Family's Future?</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Ready to Protect Your Family's Future?</h1>
 
             <div className="flex flex-col justify-center items-center">
-                <p className="text-[20px] text-gray-700 mb-5">Get the right General insurance coverage tailored to your needs.
-                    Our experts are ready to help you find the perfect policy.</p>
-                <button className="py-3 px-8 bg-red-500 hover:bg-red-600 duration-300 text-white text-[18px] font-semibold
-                 rounded-2xl cursor-pointer shadow-lg">Apply Now</button>
+                <p className="text-center text-gray-700 mb-5 max-a:w-[800px] max-c:w-[500px] max-g:w-full min-b:text-[20px]
+                max-b:text-[18px] max-c:text-[17px]">Get the right General insurance coverage tailored to your needs. Our experts
+                    are ready to help you find the perfect policy.
+                </p>
+                <button className="bg-red-500 hover:bg-red-600 duration-300 text-white font-semibold rounded-2xl
+                    cursor-pointer shadow-lg min-c:py-3 min-c:px-8 max-c:py-2 max-c:px-5 min-c:text-[18px] max-c:text-[17px]">
+                    Apply Now
+                </button>
             </div>
         </div>
     )
@@ -155,11 +164,12 @@ function Faq() {
     ];
 
     return (
-        <div className="p-12">
-            <h1 className="text-black text-4xl font-bold text-center mb-12">Frequently Asked Questions</h1>
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]">Frequently Asked Questions</h1>
 
             <div className="flex justify-center">
-                <div className="flex flex-col gap-4 mb-6 w-[80%]">
+                <div className="flex flex-col gap-4 mb-6 min-b:w-[80%] max-b:w-full">
                     {faqData.map((faq, index) => (
                         <FAQItem
                             key={index}
@@ -184,12 +194,12 @@ function FAQItem({ question, answer, isOpen, onClick }) {
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
                 cursor-pointer"
             >
-                <h3 className="text-[17px] font-semibold text-gray-700">{question}</h3>
+                <h3 className="min-f:text-[17px] max-f:text-[16px] font-semibold text-gray-700 text-left">{question}</h3>
                 <span>
                     {isOpen ? (
-                        <FaChevronUp className="text-gray-700" />
+                        <FaChevronUp className="text-gray-700 ml-2.5" />
                     ) : (
-                        <FaChevronDown className="text-gray-700" />
+                        <FaChevronDown className="text-gray-700 ml-2.5" />
                     )}
                 </span>
             </button>

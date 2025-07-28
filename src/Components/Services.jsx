@@ -103,7 +103,8 @@ export function Services() {
                     <Link
                         to={box.link}
                         key={idx}
-                        className="p-8 w-[300px] rounded-lg shadow-lg hover:shadow-2xl cursor-pointer duration-400">
+                        className="p-8 min-e:w-[300px] max-e:w-[280px] max-sm:w-full rounded-lg shadow-lg hover:shadow-2xl
+                        cursor-pointer duration-400">
                         <div>
                             {box.icon}
                             <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
