@@ -34,13 +34,13 @@ export function Navbar() {
     ];
 
     return (
-        <div className="w-full py-4 flex justify-between items-center px-6 bg-white border-b-2 border-gray-300 fixed top-0
-            z-40">
+        <div className="w-full py-4 flex justify-between items-center bg-white border-b-2 border-gray-300 fixed top-0 z-40
+        min-a:px-40 max-a:px-6 max-f:px-3">
             {/* Logo */}
-            <div className="flex items-center gap-2 cursor-pointer">
-                <img className="w-12" src="images/logo.png" alt="logo" />
+            <div className="flex items-center gap-2 cursor-pointer max-f:mr-2.5">
+                <img className="min-d:w-12 max-d:w-10" src="images/logo.png" alt="logo" />
                 <Link to="/">
-                    <div className="min-f:text-[18px] max-f:text-[16px] font-semibold">Capital Care Finance Company</div>
+                    <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
                 </Link>
             </div>
 
@@ -99,8 +99,8 @@ export function Header() {
                 className="w-full h-full object-cover">
             </img>
 
-            <div className="absolute inset-0 bg-black/55 flex flex-col justify-center items-center
-            min-f:p-8 max-f:p-5 text-white rounded-lg">
+            <div className="absolute inset-0 bg-black/55 flex flex-col justify-center items-center min-f:p-8 max-f:p-5
+             text-white rounded-lg">
                 <h2 className="text-center font-bold mb-2 mt-18 min-a:text-[40px] max-a:text-[35px] max-c:text-[28px] 
                 max-f:text-[23px]">The Care of Your Financial Needs</h2>
                 <p className="mb-4 text-center min-a:text-[20px] max-a:text-[18px] max-f:text-[16px] max-c:w-[90%]">Your
@@ -116,10 +116,8 @@ export function Button() {
     return (
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3d9QEIBIzVWMhayLEl6YcKGs5KQxJiu2S1kWynfse4_lM8A/viewform">
             <button className="text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:scale-105 transition-transform
-             rounded-sm uppercase font-bold tracking-wide cursor-pointer min-e:text-[16px] max-e:text-[15px]
-             min-e:px-6 min-e:py-2 max-e:px-4.5 max-e:py-1.5">
-                Apply
-            </button>
+            rounded-sm uppercase font-bold tracking-wide cursor-pointer min-e:text-[16px] max-e:text-[15px] min-e:px-6 min-e:py-2
+            max-e:px-4.5 max-e:py-1.5">Apply</button>
         </a>
     );
 }
@@ -219,8 +217,8 @@ function Info() {
 
             {/* Toggle Button for Sidebar (visible only on small screens) */}
             <button
-                className="min-c:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2
-                flex justify-center items-center"
+                className="min-c:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2 flex
+                justify-center items-center"
                 onClick={() => setMenuOpen(!menuOpen)}
             >
                 {menuOpen ? <IoClose /> : <IoMenu />}
@@ -287,12 +285,12 @@ function Info() {
                     <>
                         <h2 className="font-bold text-blue-800 relative after:content-[''] after:block min-g:after:w-70
                         max-g:after:w-50 after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px]
-                         max-g:text-[26px] min-g:mb-7 max-g:mb-3">Required Documentation</h2>
+                        max-g:text-[26px] min-g:mb-7 max-g:mb-3">Required Documentation</h2>
 
                         <h3 className='text-xl font-bold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
                         <ul className='min-f:list-inside list-disc pl-5 space-y-2 min-g:text-[18px] max-g:text-[17px] min-g:mb-4
-                         max-g:mb-3 text-gray-700'>
+                        max-g:mb-3 text-gray-700'>
                             {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof", "Last 3 months' salary slips",
                                 "Bank statements for the last 6 months", "Form 16 or Income Tax Returns"]
                                 .map(item => (
@@ -303,7 +301,7 @@ function Info() {
                         <h3 className='text-xl font-bold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
                         <ul className='min-f:list-inside list-disc pl-5 space-y-2 min-g:text-[18px] max-g:text-[17px]
-                         text-gray-700 mb-6'>
+                        text-gray-700 mb-6'>
                             {["Business registration documents", "Income Tax Returns for last 2 years",
                                 "Profit & Loss statements", "Business bank statements"]
                                 .map(item => (
@@ -347,7 +345,7 @@ function Info() {
                     <>
                         <h2 className="font-bold text-blue-800 relative after:content-[''] after:block min-g:after:w-70
                         max-g:after:w-50 after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px]
-                         max-g:text-[26px] min-g:mb-7 max-g:mb-5">Frequently Asked Questions</h2>
+                        max-g:text-[26px] min-g:mb-7 max-g:mb-5">Frequently Asked Questions</h2>
 
                         <div className="flex flex-col gap-4 mb-6">
                             {faqData.map((faq, index) => (
@@ -410,11 +408,8 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
             {isOpen && (
                 <div
-                    className={`
-                    px-5 bg-white text-gray-800 border-t border-gray-200 
-                    transition-all duration-300 ease-in-out overflow-hidden
-                    ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}
-                `}
+                    className={`px-5 bg-white text-gray-800 border-t border-gray-200 transition-all duration-300 
+                    ease-in-out overflow-hidden ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}`}
                 >
                     {answer}
                 </div>
@@ -462,7 +457,7 @@ export function Footer() {
 
     return (
         <div className="pb-8 px-5 bg-blue-950 text-white min-e:pt-12 max-e:pt-8">
-            <div className="min-c:flex min-c:flex-row min-c:justify-evenly max-c:grid max-c:grid-cols-2 max-c:gap-6 
+            <div className="min-c:flex min-c:flex-row min-c:justify-evenly max-c:grid max-c:grid-cols-2 max-c:gap-6
             max-f:grid-cols-1 max-f:gap-4">
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-bold mb-4">Capital Care Finance Company</h4>

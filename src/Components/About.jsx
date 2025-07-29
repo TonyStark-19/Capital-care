@@ -3,8 +3,23 @@ import { FiShield, FiUser } from "react-icons/fi";
 import { SiTicktick } from "react-icons/si";
 import { MdErrorOutline } from "react-icons/md";
 
+// import use effect
+import { useEffect } from "react";
+
+// AOS animations
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // About section
 export function About() {
+    // AOS animations
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     // core values
     const values = [
         { icon: <FiShield className="min-f:text-2xl max-f:text-xl text-blue-700" />, name: "Integrity" },
@@ -15,12 +30,13 @@ export function About() {
 
     return (
         <div className="scroll-mt-36 min-a:p-12 max-a:p-6 max-a:pt-10" id="about">
-            <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]">About Us</h1>
+            <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6 min-a:text-4xl max-a:text-4xl
+            max-c:text-3xl max-d:text-[26px]" data-aos="fade-up" data-aos-duration="1000">About Us</h1>
 
             <div className="flex flex-row flex-wrap items-center justify-center gap-8">
-                <div className="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px]
-                 max-a:w-[500px] min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[300px] max-h:min-h-[150px]">
+                <div className="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px] max-a:w-[500px]
+                min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[250px] max-h:min-h-[150px]"
+                    data-aos="fade-up" data-aos-duration="1000">
                     <h2 className="text-blue-700 font-bold relative after:content-[''] after:block after:w-16 after:h-1
                     after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full min-f:text-2xl max-f:text-[22px]">Who We Are?</h2>
                     <p className="text-[16px] min-f:tracking-wider max-f:tracking-normal text-gray-700">At Capital Care
@@ -30,8 +46,9 @@ export function About() {
                         ensure seamless processing, minimal paperwork, and quick approvals.</p>
                 </div>
 
-                <div className="bg-blue-700 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px]
-                 max-a:w-[500px] min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[300px] max-h:min-h-[150px]">
+                <div className="bg-blue-700 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px] max-a:w-[500px]
+                min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[290px] max-h:min-h-[150px]"
+                    data-aos="fade-up" data-aos-duration="1000">
                     <h2 className="text-white font-bold relative after:content-[''] after:block after:w-16 after:h-1
                     after:bg-white after:mt-2 after:mb-3 after:rounded-full min-f:text-2xl max-f:text-[22px]">What We Offer</h2>
                     <p className="text-[16px] min-f:tracking-wider max-f:tracking-normal text-gray-100">At Capital Care Finance
@@ -40,8 +57,9 @@ export function About() {
                         your property's value, we've got you covered.</p>
                 </div>
 
-                <div className="bg-blue-700 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px]
-                 max-a:w-[500px] min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[250px] max-h:min-h-[150px]">
+                <div className="bg-blue-700 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px] max-a:w-[500px]
+                min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[260px] max-h:min-h-[150px]"
+                    data-aos="fade-up" data-aos-duration="1000">
                     <h2 className="text-white font-bold relative after:content-[''] after:block after:w-16 after:h-1
                     after:bg-white after:mt-2 after:mb-3 after:rounded-full min-f:text-2xl max-f:text-[22px]">Our Mission</h2>
                     <p className="text-[16px] min-f:tracking-wider max-f:tracking-normal text-gray-100">At Capital Care Finance
@@ -50,8 +68,9 @@ export function About() {
                         approvals and minimal paperwork.</p>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px]
-                 max-a:w-[500px] min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[250px] max-h:min-h-[150px]">
+                <div className="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition min-a:w-[600px] max-a:w-[500px]
+                min-a:p-8 max-a:p-6 max-f:p-4 max-h:w-full min-h:min-h-[250px] max-h:min-h-[150px]"
+                    data-aos="fade-up" data-aos-duration="1000">
                     <h2 className="text-blue-700 font-bold relative after:content-[''] after:block after:w-16 after:h-1
                     after:bg-blue-700 after:mt-2 after:mb-3 after:rounded-full min-f:text-2xl max-f:text-[22px]">Core Values</h2>
 

@@ -1,3 +1,10 @@
+// import use effect
+import { useEffect } from "react";
+
+// AOS animations
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // react icons
 import { IoCallOutline } from "react-icons/io5";
 import { BiSupport } from "react-icons/bi";
@@ -5,6 +12,14 @@ import { SlLocationPin } from "react-icons/sl";
 
 // contact section
 export function Contact() {
+    // AOS animations
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     // contact info
     const contactInfo = [
         { icon: <IoCallOutline className="text-[22px]" />, text: "+91 8743843171", },
@@ -15,9 +30,11 @@ export function Contact() {
     return (
         <div className="py-12 px-6" id="contact">
             <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]">Contact Us</h1>
+            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-d:text-[26px]" data-aos="fade-up" data-aos-duration="1000">
+                Contact Us
+            </h1>
 
-            <div className="flex min-b:flex-row max-b:flex-col justify-center">
+            <div className="flex min-b:flex-row max-b:flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
                 <div className="shadow-xl min-b:rounded-l-lg max-b:rounded-t-lg min-a:w-[45%] max-a:w-[49%] max-b:w-full
                 min-e:p-8 max-e:p-5">
                     <h2 className="min-e:text-[32px] max-e:text-[25px] mb-6 font-bold">Get in Touch</h2>

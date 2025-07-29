@@ -125,8 +125,8 @@ function Info() {
 
             {/* Toggle Button for Sidebar (visible only on small screens) */}
             <button
-                className="min-c:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2
-                            flex justify-center items-center"
+                className="min-c:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2 flex
+                justify-center items-center"
                 onClick={() => setMenuOpen(!menuOpen)}
             >
                 {menuOpen ? <IoClose /> : <IoMenu />}
@@ -191,12 +191,12 @@ function Info() {
                     <>
                         <h2 className="font-bold text-blue-800 relative after:content-[''] after:block min-g:after:w-70
                         max-g:after:w-50 after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px]
-                         max-g:text-[26px] min-g:mb-7 max-g:mb-3">Required Documentation</h2>
+                        max-g:text-[26px] min-g:mb-7 max-g:mb-3">Required Documentation</h2>
 
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
-                        <ul className='list-disc pl-6 min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed mb-6
-                        text-gray-700 space-y-2'>
+                        <ul className='min-f:list-inside list-disc pl-5 space-y-2 min-g:text-[18px] max-g:text-[17px] min-g:mb-4
+                        max-g:mb-3 text-gray-700'>
                             {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof", "Last 3 months' salary slips",
                                 "Bank statements for the last 6 months", "Form 16 or Income Tax Returns"]
                                 .map(item => (
@@ -206,8 +206,8 @@ function Info() {
 
                         <h3 className='text-xl font-semibold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
-                        <ul className='list-disc pl-6 min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed mb-6
-                        text-gray-700 space-y-2'>
+                        <ul className='min-f:list-inside list-disc pl-5 space-y-2 min-g:text-[18px] max-g:text-[17px] min-g:mb-4
+                        max-g:mb-3 text-gray-700'>
                             {["Business registration documents", "Income Tax Returns for last 2 years",
                                 "Profit & Loss statements", "Business bank statements"]
                                 .map(item => (
@@ -296,11 +296,8 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
             {isOpen && (
                 <div
-                    className={`
-                    px-5 bg-white text-gray-800 border-t border-gray-200 
-                    transition-all duration-300 ease-in-out overflow-hidden
-                    ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}
-                `}
+                    className={`px-5 bg-white text-gray-800 border-t border-gray-200 transition-all duration-300 
+                    ease-in-out overflow-hidden ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}`}
                 >
                     {answer}
                 </div>

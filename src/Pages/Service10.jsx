@@ -7,8 +7,23 @@ import { useState } from "react";
 // react icons
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
+// import use effect
+import { useEffect } from "react";
+
+// AOS animations
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // service 10 : Health Insurance
 export function ServiceTen() {
+    // AOS animations
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     return (
         <div className="w-full overflow-x-hidden">
             <Navbar />
@@ -29,12 +44,12 @@ function About() {
     return (
         <div className="flex flex-col justify-center items-center min-c:p-12 max-c:p-6 max-c:pt-8">
             <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-3 min-c:text-4xl max-c:text-3xl 
-            max-f:text-[26px]">What is Health Insurance?</h1>
+            max-f:text-[26px]" data-aos="fade-up" data-aos-duration="1000">What is Health Insurance?</h1>
 
             <div className="flex flex-col justify-center items-center gap-5 shadow-lg px-4 py-6 rounded-lg min-a:w-[80%]
-                max-a:w-full">
-                <p className="text-[16px] text-gray-700 min-a:w-[90%] max-a:w-[98%]">Health insurance is a type of coverage
-                    that helps you manage the cost of medical expenses and healthcare services. When you have health insurance, the
+                max-a:w-full" data-aos="fade-up" data-aos-duration="1000">
+                <p className="text-[16px] text-gray-700 min-c:text-center w-[98%]">Health insurance is a type of coverage that
+                    helps you manage the cost of medical expenses and healthcare services. When you have health insurance, the
                     insurance company pays a part or the entire amount of your medical bills, depending on the terms of the
                     policy. This financial protection ensures that you can access necessary medical treatments without
                     having to bear the full financial burden. Health insurance plans can cover a range of healthcare services,
@@ -86,13 +101,13 @@ function Types() {
 
     return (
         <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
-            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
-            max-f:text-[26px]">Types Of Health Insurance</h1>
+            <h1 className="text-black font-bold text-center min-c:mb-10 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]" data-aos="fade-up" data-aos-duration="1000">Types Of Health Insurance</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-8 min-e:w-[300px] max-e:w-[280px] max-sm:w-full rounded-lg shadow-lg 
-                    hover:shadow-2xl duration-400">
+                    <div key={idx} className="p-8 min-a:w-[25%] max-a:w-[300px] max-e:w-[280px] max-sm:w-full rounded-lg shadow-lg 
+                    hover:shadow-2xl duration-400" data-aos="fade-up" data-aos-duration="1000">
                         <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>
                         <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
@@ -115,12 +130,13 @@ function Buy() {
     ];
     return (
         <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
-            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
-            max-f:text-[26px]">Who Should Buy a Health Insurance Policy?</h1>
+            <h1 className="text-black font-bold text-center min-c:mb-10 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]" data-aos="fade-up" data-aos-duration="1000">Who Should Buy a Health Insurance Policy?</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div key={idx} className="p-5 min-g:w-[230px] max-g:w-[210px] max-f:w-full rounded-lg bg-blue-100 shadow-lg">
+                    <div key={idx} className="p-5 min-a:w-[20%] max-a:w-[230px] max-g:w-[210px] max-f:w-full rounded-lg
+                    bg-blue-100 shadow-lg" data-aos="fade-up" data-aos-duration="1000">
                         <p className="text-[16px] tracking-wide text-gray-700">{box}</p>
                     </div>
                 ))}
@@ -147,12 +163,13 @@ function Terms() {
 
     return (
         <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
-            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
-            max-f:text-[26px]">Key Terms in Health Insurance</h1>
+            <h1 className="text-black font-bold text-center min-c:mb-10 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]" data-aos="fade-up" data-aos-duration="1000">Key Terms in Health Insurance</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
-                    <div className="p-5 min-g:w-[230px] max-g:w-[210px] max-f:w-full rounded-lg bg-blue-100 shadow-lg" key={idx}>
+                    <div className="p-5 min-a:w-[20%] max-a:w-[230px] max-g:w-[210px] max-f:w-full rounded-lg bg-blue-100
+                    shadow-lg" data-aos="fade-up" data-aos-duration="1000" key={idx}>
                         <h3 className="text-blue-400 text-xl font-semibold mb-2">{box.name}</h3>
                         <p className="text-[16px] tracking-wide text-gray-700">{box.description}</p>
                     </div>
@@ -166,7 +183,7 @@ function Terms() {
 // apply
 function Apply() {
     return (
-        <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
+        <div className="min-c:p-12 max-c:p-6 max-c:pt-8" data-aos="fade-up" data-aos-duration="1000">
             <h1 className="text-black font-bold text-center min-c:mb-5 max-c:mb-3 min-b:text-4xl max-b:text-3xl max-c:text-[26px] 
             max-g:text-[23px]">Ready to Protect Your Family's Future?</h1>
 
@@ -230,8 +247,8 @@ function Faq() {
 
     return (
         <div className="min-c:p-12 max-c:p-6 max-c:pt-8">
-            <h1 className="text-black font-bold text-center min-c:mb-8 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
-            max-f:text-[26px]">Frequently Asked Questions</h1>
+            <h1 className="text-black font-bold text-center min-c:mb-10 max-c:mb-6 min-c:text-4xl max-c:text-3xl 
+            max-f:text-[26px]" data-aos="fade-up" data-aos-duration="1000">Frequently Asked Questions</h1>
 
             <div className="flex justify-center">
                 <div className="flex flex-col gap-4 mb-6 min-b:w-[80%] max-b:w-full">
@@ -253,7 +270,7 @@ function Faq() {
 // FAQ item
 function FAQItem({ question, answer, isOpen, onClick }) {
     return (
-        <div className="rounded-md shadow-md overflow-hidden border border-gray-200">
+        <div className="rounded-md shadow-md overflow-hidden border border-gray-200" data-aos="fade-up" data-aos-duration="1000">
             <button
                 onClick={onClick}
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
@@ -271,11 +288,8 @@ function FAQItem({ question, answer, isOpen, onClick }) {
 
             {isOpen && (
                 <div
-                    className={`
-                    px-5 bg-white text-gray-800 border-t border-gray-200 
-                    transition-all duration-300 ease-in-out overflow-hidden
-                    ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}
-                `}
+                    className={`px-5 bg-white text-gray-800 border-t border-gray-200 transition-all duration-300 
+                    ease-in-out overflow-hidden ${isOpen ? 'max-h-[300px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'}`}
                 >
                     {answer}
                 </div>

@@ -10,8 +10,23 @@ import { SlCreditCard } from "react-icons/sl";
 // import link
 import { Link } from 'react-router-dom';
 
+// import use effect
+import { useEffect } from "react";
+
+// AOS animations
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // Services section
 export function Services() {
+    // AOS animations
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     // box content
     const boxes = [
         {
@@ -95,8 +110,8 @@ export function Services() {
 
     return (
         <div className="py-12 px-4 bg-gray-50" id="services">
-            <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6
-            min-a:text-4xl max-a:text-4xl max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0">Our Services</h1>
+            <h1 className="text-black font-bold text-center min-a:mb-12 max-a:mb-10 max-b:mb-6 min-a:text-4xl max-a:text-4xl
+            max-c:text-3xl max-c:mb-3 max-d:text-[26px] max-d:mb-0" data-aos="fade-up" data-aos-duration="1000">Our Services</h1>
 
             <div className="flex flex-row flex-wrap justify-center w-full min-c:gap-8 max-c:gap-4">
                 {boxes.map((box, idx) => (
@@ -104,7 +119,7 @@ export function Services() {
                         to={box.link}
                         key={idx}
                         className="p-8 min-e:w-[300px] max-e:w-[280px] max-sm:w-full rounded-lg shadow-lg hover:shadow-2xl
-                        cursor-pointer duration-400">
+                        cursor-pointer duration-400" data-aos="fade-up" data-aos-duration="1000">
                         <div>
                             {box.icon}
                             <h3 className="text-2xl text-blue-800 mb-4 font-bold">{box.name}</h3>

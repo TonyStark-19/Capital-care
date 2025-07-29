@@ -76,9 +76,11 @@ export function Home() {
                             />
 
                             {/* Overlay content */}
-                            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center
-                            p-8 text-white rounded-lg">
-                                <h2 className="font-bold mb-2 mt-18 min-c:text-3xl max-c:text-[26px] max-d:text-[23px]">{slide.heading}</h2>
+                            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8
+                             text-white rounded-lg">
+                                <h2 className="font-bold mb-2 mt-18 min-c:text-3xl max-c:text-[26px] max-d:text-[23px]">
+                                    {slide.heading}
+                                </h2>
                                 <p className="text-center mb-4 min-c:text-lg max-c:text-[16px]">{slide.text}</p>
                                 <Link
                                     to="services"

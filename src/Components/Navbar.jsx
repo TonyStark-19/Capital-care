@@ -20,11 +20,11 @@ export function Navbar() {
     ];
 
     return (
-        <div className="w-full py-4 flex justify-between items-center px-6 bg-white border-b-2 border-gray-300 fixed top-0
-            z-40">
-            {/* Logo */}
-            <div className="flex items-center gap-2 cursor-pointer">
-                <img className="w-12" src="images/logo.png" alt="logo" />
+        <div className="w-full py-4 flex justify-between items-center bg-white border-b-2 border-gray-300 fixed top-0 z-40
+        min-a:px-40 max-a:px-6 max-f:px-3">
+            {/* logo */}
+            <div className="flex items-center gap-2 cursor-pointer max-f:mr-2.5">
+                <img className="min-d:w-12 max-d:w-10" src="images/logo.png" alt="logo" />
                 <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
             </div>
 
