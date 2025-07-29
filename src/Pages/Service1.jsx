@@ -191,14 +191,16 @@ function Info() {
     return (
         <div className='min-b:w-[80%] max-b:w-full shadow-xl flex flex-row mx-auto relative'>
             {/* Sidebar Tabs */}
-            <div className={`w-70 py-5 pr-5 bg-gray-100 flex flex-col gap-2.5 z-20 fixed max-lg:top-0 max-lg:left-0 max-lg:h-full
-                transition-transform duration-300 ease-in-out
-                ${menuOpen ? "max-lg:translate-x-0" : "max-lg:-translate-x-full"}
-                lg:relative lg:translate-x-0`}>
+            <div className={`min-c:w-70 max-c:w-full py-5 pr-5 bg-gray-100 flex flex-col gap-2.5 z-20 max-c:top-10 max-c:left-0
+                max-c:h-full transition-transform duration-300 ease-in-out
+                ${menuOpen ? "max-c:translate-x-0" : "max-c:-translate-x-full"} max-c:absolute`}>
                 {tabs.map(tab => (
                     <div
                         key={tab.id}
-                        onClick={() => setSelectedSection(tab.id)}
+                        onClick={() => {
+                            setSelectedSection(tab.id);
+                            setMenuOpen(false);
+                        }}
                         className={`p-4 text-[17px] cursor-pointer rounded-r-xl duration-200 flex flex-row justify-between
                             items-center group text-blue-800
                             ${selectedSection === tab.id
@@ -217,31 +219,36 @@ function Info() {
 
             {/* Toggle Button for Sidebar (visible only on small screens) */}
             <button
-                className="lg:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2"
+                className="min-c:hidden text-3xl absolute left-0 top-0 z-20 text-blue-800 bg-gray-200 w-full p-2
+                flex justify-center items-center"
                 onClick={() => setMenuOpen(!menuOpen)}
             >
                 {menuOpen ? <IoClose /> : <IoMenu />}
             </button>
 
             {/* Content Section */}
-            <div className='w-full pb-8 px-8 pt-14'>
+            <div className='w-full min-c:pt-6 max-c:pt-14 pb-8 min-g:px-8 max-g:px-4'>
                 {selectedSection === "features" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">About Home Loan</h2>
+                        <h2 className="font-bold text-blue-800 relative after:content-[''] after:block after:w-50 after:h-1
+                        after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px] max-g:text-[26px]
+                        min-g:mb-6 max-g:mb-3">About Home Loan</h2>
 
-                        <p className='text-[18px] leading-relaxed mb-4 text-gray-700'>
+                        <p className='min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed min-g:mb-4 max-g:mb-3
+                        text-gray-700'>
                             Tailored Housing Finance Solutions to Build, Expand, or Upgrade Your Dream Home.
                         </p>
 
-                        <p className='text-[18px] leading-relaxed mb-4 text-gray-700'>
+                        <p className='min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed min-g:mb-4 max-g:mb-3
+                        text-gray-700'>
                             We collaborate with leading financial institutions to provide customized housing finance options
                             with attractive interest rates and manageable repayment plans, designed to suit your specific needs.
                         </p>
 
                         <div className='mb-4'>
                             {loanOptions.map((item, idx) => (
-                                <p key={idx} className='text-[18px] leading-relaxed text-gray-800 mb-2'>
+                                <p key={idx} className='min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed text-gray-700
+                                mb-3'>
                                     <span className='font-semibold text-blue-700'>{item.title}: </span>{item.description}
                                 </p>
                             ))}
@@ -254,13 +261,16 @@ function Info() {
 
                 {selectedSection === "eligibility" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Eligibility Criteria</h2>
+                        <h2 className="font-bold text-blue-800 relative after:content-[''] after:block after:w-50 after:h-1
+                        after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px] max-g:text-[26px]
+                        min-g:mb-6 max-g:mb-3">Eligibility Criteria</h2>
 
-                        <p className='text-[18px] text-gray-800 mb-4'>To qualify for a home loan with Capital Care Finance
-                            Company, you must meet the following criteria:</p>
+                        <p className='min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed min-g:mb-4 max-g:mb-3
+                        text-gray-700'>To qualify for a home loan with Capital Care Finance Company, you must meet the following
+                            criteria:</p>
 
-                        <ul className='list-disc pl-6 text-[18px] text-gray-800 space-y-2 mb-6'>
+                        <ul className='list-disc pl-6 min-g:text-[18px] max-g:text-[17px] min-g:leading-relaxed mb-6
+                        text-gray-700 space-y-2'>
                             {["Age: 21-65 years", "Employment: Salaried or Self-employed professionals",
                                 "Minimum Income: ₹3,00,000 per annum", "Credit Score: 700 or above",
                                 "Stable job/business history of at least 2 years"]
@@ -275,12 +285,14 @@ function Info() {
 
                 {selectedSection === "documentation" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-6 text-blue-800 relative after:content-[''] after:block after:w-70
-                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Required Documentation</h2>
+                        <h2 className="font-bold text-blue-800 relative after:content-[''] after:block min-g:after:w-70
+                        max-g:after:w-50 after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px]
+                         max-g:text-[26px] min-g:mb-7 max-g:mb-3">Required Documentation</h2>
 
                         <h3 className='text-xl font-bold mt-5 mb-3 text-blue-700'>For Salaried Individuals:</h3>
 
-                        <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px]'>
+                        <ul className='min-f:list-inside list-disc pl-5 space-y-2 min-g:text-[18px] max-g:text-[17px] min-g:mb-4
+                         max-g:mb-3 text-gray-700'>
                             {["Identity Proof (Aadhaar/PAN/Passport)", "Address Proof", "Last 3 months' salary slips",
                                 "Bank statements for the last 6 months", "Form 16 or Income Tax Returns"]
                                 .map(item => (
@@ -290,7 +302,8 @@ function Info() {
 
                         <h3 className='text-xl font-bold mt-5 mb-3 text-blue-700'>For Self-Employed:</h3>
 
-                        <ul className='list-inside list-disc pl-5 space-y-2 text-gray-700 text-[18px] mb-6'>
+                        <ul className='min-f:list-inside list-disc pl-5 space-y-2 min-g:text-[18px] max-g:text-[17px]
+                         text-gray-700 mb-6'>
                             {["Business registration documents", "Income Tax Returns for last 2 years",
                                 "Profit & Loss statements", "Business bank statements"]
                                 .map(item => (
@@ -304,22 +317,23 @@ function Info() {
 
                 {selectedSection === "rates" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-7 text-blue-800 relative after:content-[''] after:block after:w-50
-                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Rates & Fees</h2>
+                        <h2 className="font-bold text-blue-800 relative after:content-[''] after:block after:w-50 after:h-1
+                        after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px] max-g:text-[26px]
+                        min-g:mb-6 max-g:mb-5">Rates & Fees</h2>
 
                         <table className='w-full border text-left text-gray-700 shadow rounded-md overflow-hidden mb-6'>
                             <thead className='bg-blue-100 text-blue-800'>
                                 <tr>
-                                    <th className='text-[18px] px-4 py-3 font-semibold'>Particulars</th>
-                                    <th className='text-[18px] px-4 py-3 font-semibold'>Charges</th>
+                                    <th className='min-g:text-[18px] max-g:text-[17px] px-4 py-3 font-semibold'>Particulars</th>
+                                    <th className='min-g:text-[18px] max-g:text-[17px] px-4 py-3 font-semibold'>Charges</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 {rateRows.map((row, idx) => (
                                     <tr key={idx} className='even:bg-gray-100 hover:bg-gray-200 transition'>
-                                        <td className='text-[18px] py-2.5 px-4'>{row.label}</td>
-                                        <td className='text-[18px] py-2.5 px-4'>{row.value}</td>
+                                        <td className='min-g:text-[18px] max-g:text-[16px] py-2.5 px-4'>{row.label}</td>
+                                        <td className='min-g:text-[18px] max-g:text-[16px] py-2.5 px-4'>{row.value}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -331,8 +345,9 @@ function Info() {
 
                 {selectedSection === "faqs" && (
                     <>
-                        <h2 className="text-[32px] font-bold mb-7 text-blue-800 relative after:content-[''] after:block after:w-70
-                        after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full">Frequently Asked Questions</h2>
+                        <h2 className="font-bold text-blue-800 relative after:content-[''] after:block min-g:after:w-70
+                        max-g:after:w-50 after:h-1 after:bg-blue-800 after:mt-1 after:mb-3 after:rounded-full min-g:text-[32px]
+                         max-g:text-[26px] min-g:mb-7 max-g:mb-5">Frequently Asked Questions</h2>
 
                         <div className="flex flex-col gap-4 mb-6">
                             {faqData.map((faq, index) => (
@@ -358,13 +373,14 @@ function Info() {
 export function Item() {
     return (
         <>
-            <h3 className='text-2xl font-bold mt-6 mb-6 text-blue-800'>Why Choose Capital Care Finance Company?</h3>
+            <h3 className='min-g:text-2xl max-g:text-[22px] font-bold min-g:my-6 max-g:my-4 text-blue-800'>
+                Why Choose Capital Care Finance Company?</h3>
 
             <div className='flex flex-wrap gap-4 mb-6'>
                 {["Easy Documentation", "Quick Approval", "Higher Loan Amounts", "Flexible Repayment",
                     "Flexible Tenor", "Attractive Interest Rates", "Transparent Process"]
                     .map(item => (
-                        <div key={item} className='bg-blue-50 text-blue-800 px-4 py-2 rounded shadow text-[15px]'>
+                        <div key={item} className='bg-blue-50 text-blue-800 px-4 py-2 rounded shadow text-[15px] max-f:w-[95%]'>
                             {item}
                         </div>
                     ))}
@@ -382,12 +398,12 @@ function FAQItem({ question, answer, isOpen, onClick }) {
                 className="flex justify-between items-center w-full px-5 py-4 bg-blue-50 hover:bg-blue-100 transition-all
                 cursor-pointer"
             >
-                <h3 className="text-[17px] font-semibold text-gray-700">{question}</h3>
+                <h3 className="min-g:text-[17px] max-g:text-[16px] text-left font-semibold text-gray-700">{question}</h3>
                 <span>
                     {isOpen ? (
-                        <FaChevronUp className="text-gray-700" />
+                        <FaChevronUp className="text-gray-700 ml-2.5" />
                     ) : (
-                        <FaChevronDown className="text-gray-700" />
+                        <FaChevronDown className="text-gray-700 ml-2.5" />
                     )}
                 </span>
             </button>
