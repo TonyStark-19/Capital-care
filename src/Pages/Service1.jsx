@@ -69,7 +69,7 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="absolute top-[70px] right-0 w-full bg-white shadow-md z-30 md:hidden">
+                <div className="absolute min-d:top-[70px] max-d:top-[65px] right-0 w-full bg-white shadow-md z-30 md:hidden">
                     <ul className="flex flex-col items-start py-5 px-6 space-y-4">
                         {quickLinks.map((quickLink, idx) => (
                             <li key={idx}>
@@ -100,7 +100,7 @@ export function Header() {
             </img>
 
             <div className="absolute inset-0 bg-black/55 flex flex-col justify-center items-center min-f:p-8 max-f:p-5
-             text-white rounded-lg">
+             text-white">
                 <h2 className="text-center font-bold mb-2 mt-18 min-a:text-[40px] max-a:text-[35px] max-c:text-[28px] 
                 max-f:text-[23px]">The Care of Your Financial Needs</h2>
                 <p className="mb-4 text-center min-a:text-[20px] max-a:text-[18px] max-f:text-[16px] max-c:w-[90%]">Your

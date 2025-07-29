@@ -64,7 +64,6 @@ export function Home() {
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                 }}
-                className="rounded-lg"
             >
                 {slides.map((slide, idx) => (
                     <SwiperSlide key={idx}>
@@ -72,12 +71,12 @@ export function Home() {
                             <img
                                 src={slide.image}
                                 alt={slide.heading}
-                                className="w-full h-full object-cover rounded-lg"
+                                className="w-full h-full object-cover"
                             />
 
                             {/* Overlay content */}
                             <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8
-                             text-white rounded-lg">
+                             text-white">
                                 <h2 className="font-bold mb-2 mt-18 min-c:text-3xl max-c:text-[26px] max-d:text-[23px]">
                                     {slide.heading}
                                 </h2>

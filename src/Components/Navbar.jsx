@@ -55,7 +55,7 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="absolute top-[70px] right-0 w-full bg-white shadow-md z-30 md:hidden">
+                <div className="absolute min-d:top-[70px] max-d:top-[65px] right-0 w-full bg-white shadow-md z-30 md:hidden">
                     <ul className="flex flex-col items-start py-5 px-6 space-y-4">
                         {quickLinks.map((quickLink, idx) => (
                             <li key={idx}>
