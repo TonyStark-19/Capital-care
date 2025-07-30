@@ -3,6 +3,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 // import link
 import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 // footer section
 export function Footer() {
@@ -74,7 +75,7 @@ export function Footer() {
                     <ul>
                         {serviceLinks.map((serviceLink, idx) => (
                             <li key={idx} className="text-[16px] mb-2 cursor-pointer">
-                                <a href={serviceLink.link}>{serviceLink.name}</a>
+                                <RouterLink to={serviceLink.link}>{serviceLink.name}</RouterLink>
                             </li>
                         ))}
                     </ul>

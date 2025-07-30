@@ -5,6 +5,7 @@ import { IoMenu, IoClose } from "react-icons/io5";
 
 // import link
 import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 // import use state
 import { useState } from "react";
@@ -485,7 +486,7 @@ export function Footer() {
                     <ul>
                         {serviceLinks.map((serviceLink, idx) => (
                             <li key={idx} className="text-[16px] mb-2 cursor-pointer">
-                                <a href={serviceLink.link}>{serviceLink.name}</a>
+                                <RouterLink to={serviceLink.link}>{serviceLink.name}</RouterLink>
                             </li>
                         ))}
                     </ul>
