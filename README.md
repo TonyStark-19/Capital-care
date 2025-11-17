@@ -1,11 +1,18 @@
 # 💼 Capital Care Finance Company - Website Redesign
 
-A fully responsive and modern redesign of the **Capital Care Finance Company** website, built using **React JS** and **Tailwind CSS**. This project reflects an improved user experience with smooth navigation, reusable components, and clean UI animations.
+A modern, fully responsive website redesign for **Capital Care Finance Company**, built using **React JS** and **Tailwind CSS**. <br />
+This project focuses on delivering a clean UI, smooth user experience, reusable components, and seamless navigation with beautiful scroll animations.
 
 ---
 ## 📸 Screenshots
 
-![Home Page](/public/images/image.png)
+| Preview 1 | Preview 2 |
+|------------|------------|
+| ![Screenshot 1](public/images/Screenshot/image1.png) | ![Screenshot 2](public/images/Screenshot/image2.png) |
+
+| Preview 3 | Preview 4 |
+|------------|------------|
+| ![Screenshot 3](public/images/Screenshot/image3.png) | ![Screenshot 4](public/images/Screenshot/image4.png) |
 
 ---
 
@@ -17,15 +24,15 @@ The project is live and can be viewed here: [Capital Care](https://capital-care.
 
 ## ✨ Features
 
-- ✅ Fully Responsive Design for all devices
-- ✅ Built with **React JS** + **Tailwind CSS**
-- ✅ Smooth scrolling with `react-scroll`
-- ✅ Page navigation with `react-router-dom`
-- ✅ Icon support via `react-icons`
-- ✅ Swipeable carousels using `SwiperJS`
-- ✅ AOS animations for scroll-based UI interactions
-- ✅ Clean and modular code with reusable components
-- ✅ Data-driven rendering using `.map()` for scalability
+- 📱 Fully Responsive Design across all devices
+- ⚛️ Built with React JS + Tailwind CSS
+- 🔗 Smooth scrolling using react-scroll
+- 🧭 Page navigation powered by react-router-dom
+- 🎨 Stylish icons via react-icons
+- 🌀 Interactive carousels built with SwiperJS
+- ✨ Beautiful scroll animations using AOS
+- ♻️ Reusable and modular component structure
+- 📊 Data-driven UI rendering using .map() for scalability
 
 ---
 
@@ -45,11 +52,12 @@ The project is live and can be viewed here: [Capital Care](https://capital-care.
 
 ## 🧠 What I Learned
 
-- Improved my understanding of **React component architecture**
-- Implemented **reusable UI blocks** using props and mapping
-- Learned to integrate **third-party libraries** for better UX
-- Mastered **Tailwind's responsive utilities**
-- Enhanced routing and scroll behavior in single-page apps
+- Designing UI using Tailwind’s responsive utilities
+- Creating reusable, prop-based components
+- Integrating third-party libraries smoothly into React
+- Structuring a scalable folder and component layout
+- Enhancing user interactions using scroll effects and sliders
+- Improving routing in single-page applications
 
 ---
 
@@ -69,4 +77,7 @@ npm install
 npm run dev
 ```
 ---
-Made with ❤️ by Aditya chandel
+
+🙌 Made with ❤️ by Aditya Chandel
+
+If you have any suggestions or feedback, feel free to reach out or open an issue. Always learning, always improving! 🚀
