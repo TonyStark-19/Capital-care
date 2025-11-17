@@ -17,22 +17,22 @@ export function Home() {
     // images
     const slides = [
         {
-            image: "images/business-loan.jpeg",
+            image: "images/Other/business-loan.jpeg",
             heading: "Business Growth Financing",
             text: "Empower your business with our flexible financing options."
         },
         {
-            image: "images/home-loan.jpeg",
+            image: "images/Other/home-loan.jpeg",
             heading: "Home Loan Solutions",
             text: "Make your dream home a reality with our flexible plans."
         },
         {
-            image: "images/personal-loan.jpeg",
+            image: "images/Other/personal-loan.jpeg",
             heading: "Personal Financial Solutions",
             text: "Your dream home is just a loan away with our competitive rates."
         },
         {
-            image: "images/insurance.jpeg",
+            image: "images/Other/insurance.jpeg",
             heading: "Insurance Protection",
             text: "Comprehensive coverage for what matters most to you."
         }

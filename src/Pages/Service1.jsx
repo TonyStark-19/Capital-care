@@ -39,7 +39,7 @@ export function Navbar() {
         min-a:px-40 max-a:px-6 max-f:px-3">
             {/* Logo */}
             <div className="flex items-center gap-2 cursor-pointer max-f:mr-2.5">
-                <img className="min-d:w-12 max-d:w-10" src="images/logo.png" alt="logo" />
+                <img className="min-d:w-12 max-d:w-10" src="images/Other/logo.png" alt="logo" />
                 <Link to="/">
                     <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
                 </Link>
@@ -95,7 +95,7 @@ export function Header() {
     return (
         <div className='relative min-a:h-120 max-a:h-100 w-full overflow-hidden'>
             <img
-                src='images/insurance.jpeg'
+                src='images/Other/insurance.jpeg'
                 alt='business'
                 className="w-full h-full object-cover">
             </img>
@@ -469,7 +469,7 @@ export function Footer() {
                     <h4 className="text-[18px] font-bold mb-4">Quick Links</h4>
                     <ul>
                         {quickLinks.map((quickLink, idx) => (
-                            <li className="text-[16px] mb-2 cursor-pointer duration-300"
+                            <li className="text-[16px] mb-2 cursor-pointer duration-300 hover:underline"
                                 key={idx}>
                                 <Link
                                     to="/"
@@ -485,7 +485,7 @@ export function Footer() {
                     <h4 className="text-[18px] font-bold mb-4">Services</h4>
                     <ul>
                         {serviceLinks.map((serviceLink, idx) => (
-                            <li key={idx} className="text-[16px] mb-2 cursor-pointer">
+                            <li key={idx} className="text-[16px] mb-2 cursor-pointer hover:underline">
                                 <RouterLink to={serviceLink.link}>{serviceLink.name}</RouterLink>
                             </li>
                         ))}

@@ -24,7 +24,7 @@ export function Navbar() {
         min-a:px-40 max-a:px-6 max-f:px-3">
             {/* logo */}
             <div className="flex items-center gap-2 cursor-pointer max-f:mr-2.5">
-                <img className="min-d:w-12 max-d:w-10" src="images/logo.png" alt="logo" />
+                <img className="min-d:w-12 max-d:w-10" src="images/Other/logo.png" alt="logo" />
                 <div className="text-[18px] font-semibold">Capital Care Finance Company</div>
             </div>
 

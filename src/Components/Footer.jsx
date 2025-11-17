@@ -55,7 +55,7 @@ export function Footer() {
                     <h4 className="text-[18px] font-bold mb-4">Quick Links</h4>
                     <ul>
                         {quickLinks.map((quickLink, idx) => (
-                            <li className="text-[16px] mb-2 cursor-pointer text-gray-100 duration-300"
+                            <li className="text-[16px] mb-2 cursor-pointer text-gray-100 duration-300 hover:underline"
                                 key={idx}>
                                 <Link
                                     to={quickLink.link}
@@ -74,7 +74,7 @@ export function Footer() {
                     <h4 className="text-[18px] font-bold mb-4">Services</h4>
                     <ul>
                         {serviceLinks.map((serviceLink, idx) => (
-                            <li key={idx} className="text-[16px] mb-2 cursor-pointer">
+                            <li key={idx} className="text-[16px] mb-2 cursor-pointer hover:underline">
                                 <RouterLink to={serviceLink.link}>{serviceLink.name}</RouterLink>
                             </li>
                         ))}

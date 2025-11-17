@@ -17,12 +17,12 @@ export function Banking() {
 
     // images
     const images = [
-        { src: "/images/piramal-finance.png", alt: "piramal-finance", style: "w-[85px] h-[85px] min-b:mb-2 max-d:mb-[-30px]" },
-        { src: "/images/icici-bank.png", alt: "icici-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px] max-d:mb-[-30px]" },
-        { src: "/images/indusind-bank.png", alt: "indusind-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" },
-        { src: "/images/kotak-bank.png", alt: "kotak-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" },
-        { src: "/images/rbl-bank.png", alt: "rbl-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" },
-        { src: "/images/yes-bank.png", alt: "yes-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" }
+        { src: "/images/Banks/piramal-finance.png", alt: "piramal-finance", style: "w-[85px] h-[85px] min-b:mb-2 max-d:mb-[-30px]" },
+        { src: "/images/Banks/icici-bank.png", alt: "icici-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px] max-d:mb-[-30px]" },
+        { src: "/images/Banks/indusind-bank.png", alt: "indusind-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" },
+        { src: "/images/Banks/kotak-bank.png", alt: "kotak-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" },
+        { src: "/images/Banks/rbl-bank.png", alt: "rbl-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" },
+        { src: "/images/Banks/yes-bank.png", alt: "yes-bank", style: "min-f:w-[135px] max-f:w-[110px] h-[35px]" }
     ];
 
     return (
