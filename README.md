@@ -1,16 +1,16 @@
 # 💼 Capital Care Finance Company - Website Redesign
 
-A modern, fully responsive website redesign for **Capital Care Finance Company**, built using **React JS** and **Tailwind CSS**. <br />
+A modern, fully responsive website redesign for **Capital Care Finance Company**, built using **React JS** and **Tailwind CSS**.
 This project focuses on delivering a clean UI, smooth user experience, reusable components, and seamless navigation with beautiful scroll animations.
 
 ---
 ## 📸 Screenshots
 
-| Preview 1 | Preview 2 |
+| 🏠 Home Page | 💰 Loan Page |
 |------------|------------|
 | ![Screenshot 1](public/images/Screenshot/image1.png) | ![Screenshot 2](public/images/Screenshot/image2.png) |
 
-| Preview 3 | Preview 4 |
+| 🛡️ Insurance Page | 🧩 Footer |
 |------------|------------|
 | ![Screenshot 3](public/images/Screenshot/image3.png) | ![Screenshot 4](public/images/Screenshot/image4.png) |
 
@@ -76,8 +76,7 @@ npm install
 # Start the development server
 npm run dev
 ```
+
 ---
 
 🙌 Made with ❤️ by Aditya Chandel
-
-If you have any suggestions or feedback, feel free to reach out or open an issue. Always learning, always improving! 🚀
